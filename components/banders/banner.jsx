@@ -1,0 +1,33 @@
+import React from 'react';
+import styles from "../../styles/banner.module.css"
+import {ArrowRightOutlined, FacebookOutlined, InstagramOutlined, YoutubeOutlined} from "@ant-design/icons";
+import Slider from "react-slick";
+import Button from "../button/button";
+import Item from "../sliders/item";
+
+
+const Banner = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 20000
+    };
+    return (
+
+        <div className={styles.banner}>
+            <div className={styles.bannerItem}>
+                <Slider {...settings}>
+                    <Item/>
+                    <Item/>
+                    <Item/>
+                </Slider>
+            </div>
+        </div>
+    );
+};
+
+export default Banner;

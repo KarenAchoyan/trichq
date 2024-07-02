@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: sans-serif;
+}
+p,i,li,span{
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.section .slick-dots{
+    bottom: 50%!important;
+    display: flex !important;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+}
+.section .slick-dots li button:before{
+    color: white!important;
+
+    font-size: 12px!important;
+}
+.section .slick-dots li{
+}
+.section .slick-dots li button{
+    width: 30px!important;
+    height: 30px!important;
+}
+.section .slick-dots li button:before {
+    opacity: 0.8;
+}
+.section .slick-dots li.slick-active button:before{
+    opacity: 1!important;
+}
+
+.slick-prev, .slick-next {
+    border-radius: 50%;
+    z-index: 222222;
+}
+.slick-prev:before, .slick-next:before{
+
+}
+.stepper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #40a9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid #a0d4ff;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    margin-left: 20px;
+}
+
+.line {
+    width: 2px;
+    background-color: #40a9ff;
+    position: absolute;
+    top: 45px;
+    left: 33px;
+    height: calc(100% - 25px);
+    z-index: 0;
+}
+
+.step:last-child .line {
+    display: none;
+}
+
+.content h3{
+    margin-bottom: 10px;
+}
+.animation-header .header{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it is above other content */
+    /* Add other styles as needed */
+    background: white;
+    transition: 1s;
+}
+.animation-header.show .header{
+    top: 0%;
+}

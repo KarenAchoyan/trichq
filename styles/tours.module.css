@@ -1,0 +1,75 @@
+.container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.container>div>div{
+    padding-bottom: 20px;
+}
+.container>div{
+    padding-bottom: 20px;
+}
+.container>h4{
+    color: #57afb6;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+.container>h2{
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+.blogButton{
+    overflow: hidden;
+}
+.blogButton>span{
+    padding-top: 10px;
+    font-size: 15px;
+    display: block;
+    transition: 0.7s;
+}
+.blogButton>span:hover{
+    color: blue;
+    cursor: pointer;
+}
+.blogButton>span{
+    transform: translateX(-93px);
+}
+.blogButton:hover .span{
+    transform: translateX(1px);
+
+}
+.itemTour{
+    width: 90%;
+    margin: auto;
+}
+.itemTour img{
+    width: 100%;
+}
+.linkReadMore{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.51);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.51);
+    margin-top: 20px;
+}
+.title{
+    margin-top: 15px;
+    line-height: 30px;
+}
+.avatar{
+    position: relative;
+}
+.price{
+    background: #344451;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: max-content;
+    padding: 12px 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 20px;
+}
