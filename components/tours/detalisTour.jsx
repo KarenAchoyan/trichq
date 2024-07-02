@@ -97,7 +97,7 @@ const DetalisTour = ({tour}) => {
                 <div className={styles.description}>
                     <div className="stepper">
                         {tour?.steps?.map((step,index)=>(
-                            <div className="step">
+                            <div key={index} className="step">
                                 <div>
                                     <div className="circle">{index+1}</div>
                                 </div>

@@ -46,8 +46,8 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className={styles.pagesText}>
-                            <p>Trekker's Tales: Navigating the </p>
-                            <p>World's Wonders</p>
+                            <p>Trekkers Tales: Navigating the </p>
+                            <p>Worlds Wonders</p>
                         </div>
                     </div>
                     <div className={styles.pagesSectionLogo}>
