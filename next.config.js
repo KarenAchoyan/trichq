@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['127.0.0.1:8000'],
+    domains: ['trichq.geeklab.am'],
   },
   env: {
-    API_URL: "http://127.0.0.1:8000/api",
-    IMAGE_URL: "http://127.0.0.1:8000/storage/",
+    API_URL: "https://trichq.geeklab.am/api",
+    IMAGE_URL: "https://trichq.geeklab.am/storage/",
   },
 };
 
