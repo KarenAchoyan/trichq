@@ -25,7 +25,7 @@ const BlogItem = ({item}) => {
             }
         >
             <div className={styles.blogTextPage}>
-                <h2>{truncateContent(item.title, 55)}</h2>
+                <h2>{truncateContent(item.title, 50)}</h2>
             </div>
             <Link href={'/blogs/'+item.id}>
                 <div className={styles.blogButton}>

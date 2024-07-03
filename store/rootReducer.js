@@ -6,6 +6,7 @@ import productReducer from "./products/reducer";
 import slideReducer from "./slides/reducer";
 import reviewReducer from "./reivews/reducer";
 import tourReducer from "./tour/reducer";
+import galleryReducer from "./gallery/reducer";
 
 
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     product:productReducer,
     slide:slideReducer,
     review:reviewReducer,
-    tour:tourReducer
+    tour:tourReducer,
+    gallery:galleryReducer
 });
 
 export default rootReducer;

@@ -21,7 +21,7 @@ const Blog = ({blogs}) => {
                 ))}
             </div>
             <div className={styles.center}>
-                <Link href={'/blogs'}>
+                <Link href={'/contact'}>
                     <Button type={'blue'}>See more</Button>
                 </Link>
             </div>

@@ -14,6 +14,8 @@ import {useEffect} from "react";
 import {getBlogs} from "../store/blog/actions";
 import {getReviews} from "../store/reivews/actions";
 import {getTours} from "../store/tour/actions";
+import {getSlides} from "../store/slides/actions";
+import {getGalleries} from "../store/gallery/actions";
 
 
 const inter = Inter({subsets: ["latin"]});
@@ -22,12 +24,16 @@ export default function Home() {
     const blogs = useSelector((state) => state.blog.blogs);
     const reviews = useSelector((state) => state.review.reviews);
     const tours = useSelector((state) => state.tour.tours);
+    const slides = useSelector((state) => state.slide.slides);
+    const galleries = useSelector((state) => state.gallery?.galleries);
 
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getBlogs.request());
         dispatch(getReviews.request());
         dispatch(getTours.request());
+        dispatch(getSlides.request())
+        dispatch(getGalleries.request())
     }, [dispatch]);
 
     return (
@@ -40,11 +46,11 @@ export default function Home() {
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
                 <App>
-                    <Banner/>
+                    <Banner slides={slides}/>
                     <Tours tours={tours}/>
                     <Reviews reviews={reviews}/>
                     <Blog blogs={blogs}/>
-                    <Sliders/>
+                    <Sliders galleries={galleries}/>
                 </App>
             </main>
         </>

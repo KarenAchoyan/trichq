@@ -1,50 +1,61 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
-p,i,li,span{
+
+p, i, li, span {
     font-family: sans-serif;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
-.section .slick-dots{
-    bottom: 50%!important;
+
+.section .slick-dots {
+    bottom: 50% !important;
     display: flex !important;
     flex-direction: column;
 
     align-items: flex-end;
 
 }
-.section .slick-dots li button:before{
-    color: white!important;
 
-    font-size: 12px!important;
+.section .slick-dots li button:before {
+    color: white !important;
+
+    font-size: 12px !important;
 }
-.section .slick-dots li{
+
+.section .slick-dots li {
 }
-.section .slick-dots li button{
-    width: 30px!important;
-    height: 30px!important;
+
+.section .slick-dots li button {
+    width: 30px !important;
+    height: 30px !important;
 }
+
 .section .slick-dots li button:before {
     opacity: 0.8;
 }
-.section .slick-dots li.slick-active button:before{
-    opacity: 1!important;
+
+.section .slick-dots li.slick-active button:before {
+    opacity: 1 !important;
 }
 
 .slick-prev, .slick-next {
     border-radius: 50%;
     z-index: 222222;
 }
-.slick-prev:before, .slick-next:before{
+
+.slick-prev:before, .slick-next:before {
 
 }
+
 .stepper {
     display: flex;
     flex-direction: column;
@@ -95,10 +106,11 @@ a{
     display: none;
 }
 
-.content h3{
+.content h3 {
     margin-bottom: 10px;
 }
-.animation-header .header{
+
+.animation-header .header {
     position: fixed;
     top: -100%;
     left: 0;
@@ -108,6 +120,25 @@ a{
     background: white;
     transition: 1s;
 }
-.animation-header.show .header{
+
+.animation-header.show .header {
     top: 0%;
+}
+
+
+.main-menu a {
+    color: black !important;
+    padding-left: 20px;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-image {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-image .ant-image-img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    height: 100%;
 }

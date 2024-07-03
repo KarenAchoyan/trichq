@@ -1,22 +1,22 @@
 import { handleActions } from 'redux-actions';
 import {
-    getSlides,
+    getGalleries,
 } from './actions';
 
 const initialState = {
-    slides: [],
+    galleries: [],
     isFetching: false,
     error: null,
 };
 
-const slideReducer = handleActions(
+const galleryReducer = handleActions(
     {
-        [getSlides.success]: (state, { payload }) => ({
+        [getGalleries.success]: (state, { payload }) => ({
             ...state,
-            slides: payload,
+            galleries: payload,
             isFetching: false,
         }),
-        [getSlides.failure]: (state, { payload }) => ({
+        [getGalleries.failure]: (state, { payload }) => ({
             ...state,
             isFetching: false,
             error: payload,
@@ -25,4 +25,4 @@ const slideReducer = handleActions(
     initialState
 );
 
-export default slideReducer;
+export default galleryReducer;

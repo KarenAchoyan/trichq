@@ -3,17 +3,19 @@ import styles from "../../styles/sliders.module.css"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Image } from "antd";
-const Sliders = () => {
+import {Image} from "antd";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+
+const Sliders = ({galleries}) => {
     const settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 6,
+        slidesToShow: 5,
         slidesToScroll: 4,
-        arrows:false,
+        arrows: false,
         prevArrow: <Image width={20} height={20} alt='arrow' src={'/left-arrow.png'}/>,
-        nextArrow: <Image  width={20} height={20} alt='arrow' src={'/right-arrow.png'}/>,
+        nextArrow: <Image width={20} height={20} alt='arrow' src={'/right-arrow.png'}/>,
         responsive: [
             {
                 breakpoint: 1200, // large screens
@@ -48,63 +50,20 @@ const Sliders = () => {
     return (
         <div className={styles.container}>
             <Slider {...settings}>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
-                <div>
-                    <Image
-                        src="https://html.bdevs.net/tourigo-prv/assets/images/instagram/insta-img-2.png"
-                    />
-                </div>
+                {galleries?.map((item) => (
+                    <div key={item.id} className={styles.imageContainer}>
+                        <Image
+                            className={styles.image}
+                            src={process.env.IMAGE_URL + item.image}
+                            alt={item.title}
+                        />
+                    </div>
+                ))}
             </Slider>
         </div>
+
+
+
     );
 };
 

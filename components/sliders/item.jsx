@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from "../../styles/banner.module.css";
 import Button from "../button/button";
 import {FacebookOutlined, InstagramOutlined, YoutubeOutlined} from "@ant-design/icons";
@@ -6,14 +6,14 @@ import {FacebookOutlined, InstagramOutlined, YoutubeOutlined} from "@ant-design/
 const Item = ({item}) => {
     return (
         <div className={styles.item}>
-            <img src="/banner-four-img-1.png" alt=""/>
+            <img src={process.env.IMAGE_URL + item.image} alt=""/>
+            <div className={styles.back}/>
+
             <div className={styles.overline}>
                 <div className={styles.bannerItemText}>
                     <h4>WELCOME TOURIGO</h4>
-                    <h1>Explore Uncover Hidden Gems Worldwide</h1>
-                    <p>Share the core values and principles that drive your company. Emphasize a commitment
-                        to
-                        costume.</p>
+                    <h1>{item.title}</h1>
+                    <p>{item.content}</p>
                     <Button type={`blue`}>Knew me</Button>
                     <div className={styles.socials}>
                         <ul>

@@ -2,7 +2,11 @@
 
 .headerIcon {
     position: relative;
-    display: inline-block;
+    display: flex;
+}
+
+.mobileMenu {
+    display: none;
 }
 
 .headerIcon > div {
@@ -10,6 +14,7 @@
 }
 
 .menu {
+    height: 100vh;
     position: fixed;
     top: 0px;
     right: 0px;
@@ -172,7 +177,7 @@
 }
 
 .acounts > button:hover {
-    background:  #57afb6;
+    background: #57afb6;
     color: white;
 }
 
@@ -191,85 +196,12 @@
 }
 
 .acounts > span:hover {
-    background:  #57afb6;
+    background: #57afb6;
     color: white;
 }
 
-@media only screen and (max-width: 500px) {
-    .menu {
-        top: -10px;
-        right: -60px;
-        height:auto;
-    }
-
-    .closeIcon > span {
-        font-size: 6px;
-    }
-
-    .menuOpen {
-        width: 100%;
-    }
-
-    .text {
-        margin-right: 20px;
-    }
-    .text>p{
-        width: 200px;
-    }
-
-    .closeButtonLogo {
-        width: 50px;
-        height: 50px;
-        margin-left: 10px;
-    }
-
-    .closeButtonLogo > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .bottom, .closeText, .text, .closeIcon, .acount, .acounts {
-        margin-left: 20px;
-        word-break: break-all;
-        width: 80%;
-    }
-
-    .closeButtons {
-        padding-top: 15px;
-        justify-content: space-between;
-    }
-
-    .closeButton {
-        top: 5px;
-        left: 10px;
-        padding: 5px;
-    }
-
-    .closeIcon > h3 {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-        margin-right: 10px;
-    }
-
-    .closeIcon > span {
-        min-width: 10px;
-        font-size: 20px;
-    }
-
-    .acounts > button {
-        padding: 8px 12px;
-        font-size: 18px;
-       
-    }
-    .acounts>span{
-        margin-bottom: 180px;
-    }
-    .acount>h4{
-        font-size: 30px;
-    }
-
+.closeHeader {
+    display: none;
 }
 
 .header {
@@ -456,20 +388,15 @@
     box-shadow: 0 0 3px 3px rgba(128, 128, 128, 0.35);
 }
 
-@media only screen and (max-width: 1000px) {
-    .headerSection > ul > li {
-        display: none;
-    }
-}
 
-/* footer start*/
 .footerContainer {
     width: 100%;
     height: 400px;
     background: rgb(0, 33, 71);
     display: flex;
     justify-content: space-evenly;
-    padding-top: 96px;
+    padding-top: 100px;
+
 }
 
 .footerLogo {
@@ -593,13 +520,33 @@
     height: 200px;
 }
 
+
 @media only screen and (max-width: 1000px) {
     .autorItem {
         padding: 0 10px;
     }
-}
 
-@media only screen and (max-width: 1000px) {
+    .closeHeader {
+        display: block;
+    }
+
+    .closeHeader > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-left: 30px;
+    }
+
+    .closeHeader > ul > li {
+        list-style: none;
+        font-size: 25px;
+    }
+
+    .blogs {
+        list-style: none;
+        font-size: 25px;
+    }
+
     .footerContainer {
         width: 100%;
         height: auto;
@@ -609,9 +556,99 @@
     .pagesSection {
         margin-left: 20px;
     }
+
+    .headerSection > ul > li {
+        display: none;
+    }
+    .mobileMenu{
+        display: block;
+        margin-left: 20px;
+    }
 }
+
+
+@media only screen and (max-width: 500px) {
+    .menu {
+        top: -10px;
+        right: -60px;
+        height: auto;
+    }
+
+    .closeIcon > span {
+        font-size: 6px;
+    }
+
+    .menuOpen {
+        width: 100%;
+    }
+
+    .text {
+        margin-right: 20px;
+    }
+
+    .text > p {
+        width: 200px;
+    }
+
+    .closeButtonLogo {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+    }
+
+    .closeButtonLogo > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .bottom, .closeText, .text, .closeIcon, .acount, .acounts {
+        margin-left: 20px;
+        word-break: break-all;
+        width: 80%;
+    }
+
+    .closeButtons {
+        padding-top: 15px;
+        justify-content: space-between;
+    }
+
+    .closeButton {
+        top: 5px;
+        left: 10px;
+        padding: 5px;
+    }
+
+    .closeIcon > h3 {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        margin-right: 10px;
+    }
+
+    .closeIcon > span {
+        min-width: 10px;
+        font-size: 20px;
+    }
+
+    .acounts > button {
+        padding: 8px 12px;
+        font-size: 18px;
+
+    }
+
+    .acounts > span {
+        margin-bottom: 180px;
+    }
+
+    .acount > h4 {
+        font-size: 30px;
+    }
+
+}
+
 @media only screen and (max-width: 480px) {
-    .close{
+    .close {
         display: flex;
         align-items: center;
         margin-right: 80px;
