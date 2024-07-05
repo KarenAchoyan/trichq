@@ -8,7 +8,7 @@ import Link from "next/link";
 const Item = ({item}) => {
     return (
         <div className={styles.itemTour}>
-            <Link href={'tours/'+item.id}>
+            <Link href={'/tours/'+item.id}>
                 <div className={styles.avatar}>
                     <img
                         alt="example"

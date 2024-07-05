@@ -14,7 +14,7 @@ const Blog = ({blogs}) => {
                 </div>
             </div>
             <div className={styles.item}>
-                {blogs.map((item) => (
+                {blogs?.map((item) => (
                     <div key={item.id}>
                         <BlogItem item={item}/>
                     </div>

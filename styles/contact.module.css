@@ -60,6 +60,14 @@
     border-radius: 10px;
     width: 100%;
 }
+.contactInput input{
+    height: 60px;
+    font-size: 17px;
+}
+.contactInput textarea{
+    height: 120px;
+    font-size: 17px;
+}
 .input{
     margin-top: 20px;
 }
@@ -94,9 +102,7 @@
     transition: 1s;
     cursor: pointer;
 }
-.spanHome:hover{
-    color: darkblue;
-}
+
 .spanBorder{
     margin-right: 10px;
 }
@@ -104,9 +110,6 @@
 .span{
     cursor: pointer;
     transition: 0.7s;
-}
-.span:hover{
-    color: blue;
 }
 
 .cotactContainer {
@@ -154,13 +157,8 @@
     font-size: 30px;
     background: rgba(0, 0, 255, 0.07);
     border-radius: 50%;
-    color: #0b5ed7;
+    color: #64adb2;
 
-}
-
-.phoneBox:hover {
-    background: blue;
-    color: white;
 }
 
 .call {
@@ -247,22 +245,8 @@
     justify-content: center;
 }
 
-.phoneBox {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 85px;
-    height: 85px;
-    font-size: 30px;
-    background: rgba(0, 0, 255, 0.07);
-    border-radius: 50%;
-    color: #0b5ed7;
-
-}
 
 .phoneBox:hover {
-    background: blue;
     color: white;
 }
 

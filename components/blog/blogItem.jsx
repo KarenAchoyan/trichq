@@ -20,14 +20,15 @@ const BlogItem = ({item}) => {
             cover={
                 <img
                     alt="example"
-                    src={process.env.IMAGE_URL+item.avatar}
+                    src={process.env.IMAGE_URL+item?.avatar}
+                    i
                 />
             }
         >
             <div className={styles.blogTextPage}>
-                <h2>{truncateContent(item.title, 50)}</h2>
+                <h2>{truncateContent(item?.title, 50)}</h2>
             </div>
-            <Link href={'/blogs/'+item.id}>
+            <Link href={'/blogs/'+item?.id}>
                 <div className={styles.blogButton}>
                     <span className={styles.span}>Read More <ArrowRightOutlined/></span>
                 </div>

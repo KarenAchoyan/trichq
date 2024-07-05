@@ -50,7 +50,10 @@ const ContactWithUs = () => {
                               rules={[{ required: true, message: 'Please select a tour!' }]}
                               className={styles.input}
                           >
-                              <Select placeholder="Select a tour" className={styles.customSelect}>
+                              <Select
+                                  style={{height:'60px', fontSize:'17px'}}
+                                  placeholder="Select a tour"
+                                  className={styles.customSelect}>
                                   <Option value="1">Skydrive</Option>
                                   <Option value="2">Wild Tour</Option>
                                   <Option value="3">City Tour</Option>
@@ -63,16 +66,6 @@ const ContactWithUs = () => {
                           >
                               <TextArea placeholder="Message" rows={4} />
                           </Form.Item>
-                          <Form.Item
-                              name="agreement"
-                              valuePropName="checked"
-                              rules={[{ validator:(_, value) => value ? Promise.resolve() : Promise.reject('You must agree to the terms and policies!') }]}
-                              className={styles.checkBox}
-                          >
-                              <Checkbox>
-                                  <span className={styles.contactBoxSpan}>I agree to all terms and policies</span>
-                              </Checkbox>
-                          </Form.Item>
                           <Form.Item className={styles.button}>
                               <Button type="primary" htmlType="submit">Send Now</Button>
                           </Form.Item>
@@ -84,7 +77,6 @@ const ContactWithUs = () => {
               </div>
           </div>
         </div>
-
     );
 };
 

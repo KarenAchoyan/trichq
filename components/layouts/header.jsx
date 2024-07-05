@@ -2,16 +2,14 @@ import React, {useEffect, useState} from 'react';
 import styles from "../../styles/app.module.css"
 import {
     AppstoreOutlined,
-    ArrowDownOutlined,
-    CloseOutlined,
-    CompassOutlined, FacebookOutlined,
-    HeatMapOutlined, InstagramOutlined, MailOutlined, MenuOutlined,
+    CompassOutlined, FacebookOutlined, InstagramOutlined, MailOutlined, MenuOutlined,
     PhoneOutlined, TwitterOutlined, YoutubeOutlined
 } from "@ant-design/icons";
 import {Dropdown, Menu, Space, Input} from 'antd';
 import Link from "next/link";
 import {Button, Drawer} from 'antd';
-import {categories} from "../../utils/utils";
+import {categories, t} from "../../utils/utils";
+import LanguageSwitcher from "./languageSwitcher";
 
 const Header = () => {
 
@@ -39,47 +37,35 @@ const Header = () => {
                 </div>
                 <div className={styles.headerSection}>
                     <ul>
-                        <li><Link href={'/'}>Home</Link></li>
-                        <li>Tours
+                        <li><Link href={'/'}>{t('home')}</Link></li>
+                        <li>{t('tours')}
                             <div className={styles.drbContent}>
                                 <ul>
-                                    <li>qaylarshav</li>
-                                    <li>qaylarshav</li>
-                                    <li>qaylarshav</li>
-                                    <li>qaylarshav</li>
+                                    <li><Link href={'tours/category/1'}>ՎԵՐԵԼՔՆԵՐ</Link></li>
+                                    <li><Link href={'tours/category/2'}>ՔԱՅԼԱՐՇԱՎՆԵՐ</Link></li>
+                                    <li><Link href={'tours/category/3'}>ԱՐԿԱԾԱՅԻՆ ՏՈՒՐԻԶՄ</Link></li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <Link href={`/blogs`}>
-                                Blog
+                                {t('blog')}
                             </Link>
                         </li>
                         <li>
                             <Link href={`/gallery`}>
-                                Gallery
+                                {t('gallery')}
                             </Link>
                         </li>
                         <li>
                             <Link href={`/contact`}>
-                                Contact
+                                {t('contact_us')}
                             </Link>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className={styles.headerEndLanguage}>
-                <ul>
-                    <li>ENG <span><ArrowDownOutlined/></span>
-                        <div className={styles.drb}>
-                            <ul>
-                                <li>ARM</li>
-                                <li>RU</li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <LanguageSwitcher/>
             <div className={styles.headerIcon}>
                 <div onClick={showDrawer}>
                     <Space>

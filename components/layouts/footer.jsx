@@ -10,30 +10,36 @@ const Footer = () => {
                         <img src="/1.png"/>
                     </div>
                     <div className={styles.footerText}>
-                        <p>Welcome to Tourigo, your gateway to</p>
-                        <p>unforgettable adventures and immersive</p>
-                        <p>travel experiences. Explore with us and let</p>
-                        <p>your journey begin!</p>
+                        <p>Welcome to Tourigo, your gateway to unforgettable adventures and immersive travel experiences. Explore with us and let your journey begin!</p>
                     </div>
                 </div>
                 <div className={styles.pagesSection}>
-                    <h4>Company</h4>
+                    <h4>Pages</h4>
                     <ul>
-                        <li>About Us</li>
-                        <li>Careers</li>
-                        <li>Travel Guides</li>
-                        <li>Traveler Review</li>
-                        <li>Cotact Now</li>
+                        <li> Tours</li>
+                        <li>
+                            <Link className={styles.blog} href={`/blogs`}>
+                                Blog
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className={styles.blog} href={`/gallery`}>
+                                Gallery
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className={styles.blog} href={`/contact`}>
+                                Contact
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <div className={styles.pagesSection}>
-                    <h4>Service</h4>
+                    <h4>Tours</h4>
                     <ul>
-                        <li>Destinations</li>
-                        <li>Tour Listing</li>
-                        <li>Tour Booking</li>
-                        <li>Travel Agents</li>
-                        <li>Help</li>
+                        <li>Verelqner</li>
+                        <li>Qaylarshaver</li>
+                        <li>Arkacayin Turizm</li>
                     </ul>
                 </div>
                 <div className={styles.pagesSection}>

@@ -41,8 +41,21 @@
 .itemTour{
     width: 90%;
     margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.itemTour:hover .price{
+    background-color: #5bb2b7;
+}
+.itemTour:hover img{
+    filter: drop-shadow(8px 8px 10px gray);
+}
+.item{
+    width: calc(100% / 3);
+    margin-bottom: 40px;
 }
 .itemTour img{
+    transition: 1s;
     width: 100%;
 }
 .linkReadMore{
@@ -62,6 +75,7 @@
     position: relative;
 }
 .price{
+    transition: 0.8s;
     background: #344451;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -72,4 +86,34 @@
     right: 0;
     color: white;
     font-size: 20px;
+}
+.rightSection{
+    width: 30%;
+}
+.leftSection{
+    width: 70%;
+}
+.containerTours{
+    width: 90%;
+    margin: 70px auto;
+    display: flex;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contentRightSection{
+    width: 80%;
+    margin: auto;
+}
+.contentRightSection input, .contentRightSection button{
+    height: 60px;
+    font-size: 17px;
+}
+.contentRightSection textarea{
+    height: 150px;
+    font-size: 17px;
+}
+.contentRightSection svg{
+    font-size: 23px;
 }

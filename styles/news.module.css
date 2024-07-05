@@ -20,7 +20,6 @@
 .newsText{
     width: 60%;
     margin: auto;
-    /*margin-left: 98px;*/
     margin-bottom: 50px;
 }
 .newsText>h4{
@@ -57,11 +56,11 @@
     box-shadow: 0 0 5px 1px #80808078;
 }
 .newsRightText:hover{
-    background: #010134;
-    color: white;
+    background: #57afb6;
+    color: #344451;
 }
 .newsRightText:hover h6{
-    color: white;
+    color: #344451;
 }
 .borderimg{
     display: flex;
