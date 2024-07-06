@@ -16,7 +16,7 @@ const Reviews = ({reviews}) => {
                 </div>
             </div>
             <div className={styles.newsRight}>
-                {reviews.map((item) => (
+                {reviews?.map((item) => (
                     <Item key={item.id} item={item}/>
                 ))}
             </div>

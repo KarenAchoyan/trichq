@@ -25,6 +25,8 @@
   "general": "General",
   "grams": "grams",
   "blog": "Blog",
+  "our_blog": "Our Blog",
+  "about_blog": "Blog about travels",
   "know_more": "Know more",
   "price": "Price",
   "address": "Address",
@@ -71,5 +73,9 @@
   "paragraph_4": "An order can be canceled before delivery. Once the order is in transit, it cannot be canceled.",
   "home": "Home",
   "tours": "Tours",
-  "gallery": "Gallery"
+  "gallery": "Gallery",
+  "out_trips": "Our Trips",
+  "favorite_tours": "Favorite tours",
+  "read_more": "Read More",
+  "see_more": "See More"
 }

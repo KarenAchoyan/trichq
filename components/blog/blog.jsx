@@ -3,14 +3,15 @@ import BlogItem from "../../components/blog/blogItem";
 import styles from "../../styles/blog.module.css"
 import Button from "../button/button";
 import Link from "next/link";
+import {t} from "../../utils/utils";
 
 const Blog = ({blogs}) => {
     return (
         <div className={styles.blogContainer}>
             <div className={styles.blogContainerText}>
                 <div className={styles.page}>
-                    <h4>OUR BLOG</h4>
-                    <h2>Blog For Travel Updates</h2>
+                    <h4>{t('our_blog')}</h4>
+                    <h2>{t('about_blog')}</h2>
                 </div>
             </div>
             <div className={styles.item}>
@@ -22,7 +23,7 @@ const Blog = ({blogs}) => {
             </div>
             <div className={styles.center}>
                 <Link href={'/contact'}>
-                    <Button type={'blue'}>See more</Button>
+                    <Button type={'blue'}>{t('see_more')}</Button>
                 </Link>
             </div>
         </div>

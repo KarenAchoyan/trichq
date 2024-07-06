@@ -33,6 +33,7 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .container h1{
     margin-top: 100px;
@@ -47,7 +48,7 @@
     margin: auto;
 }
 .item > div {
-    flex: 1 1 calc(33.333% - 10px); /* Default width for items */
+    flex: 1 1 calc(100% / 4 - 20px); /* Default width for items */
     margin-bottom: 20px;
 }
 

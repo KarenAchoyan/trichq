@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import  styles from "../../styles/detalis.module.css"
 import {CalendarOutlined, MessageOutlined} from "@ant-design/icons";
 import {Input} from "antd";
@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SmallBlog from "./smallBlog";
+import {useRouter} from "next/dist/client/compat/router";
 const OtherBlog = () => {
     const settings = {
         dots: false,
@@ -15,6 +16,13 @@ const OtherBlog = () => {
         slidesToScroll: 1,
         arrows:false,
     };
+    const router = useRouter();
+    const { name } = router.query;
+
+    useEffect(()=>{
+        alert(name)
+    },[])
+
     return (
         <div className={styles.detalis}>
             <div className={styles.detalisLeft}>

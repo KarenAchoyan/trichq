@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from "next/image";
 import Item from "./item";
+import {t} from "../../utils/utils";
 
 const Tours = ({tours}) => {
     const settings = {
@@ -13,6 +14,8 @@ const Tours = ({tours}) => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
+        rows:1,
+        row:1,
         arrows: true,
         autoplaySpeed: 20000,
         prevArrow: <Image width={20} height={20} alt='arrow' src={'/left-arrow.png'}/>,
@@ -53,8 +56,8 @@ const Tours = ({tours}) => {
     };
     return (
         <div className={styles.container}>
-            <h4>OUR TRIPS</h4>
-            <h2>Feature Packages</h2>
+            <h4>{t('out_trips')}</h4>
+            <h2>{t('favorite_tours')}</h2>
             <div>
                 <Slider {...settings}>
                     {tours.map((item) => (

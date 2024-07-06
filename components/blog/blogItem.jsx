@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Avatar, Card} from 'antd';
 import {
     ArrowRightOutlined,
@@ -10,10 +10,24 @@ import {
 } from "@ant-design/icons";
 import styles from "../../styles/blog.module.css"
 import Link from "next/link";
-import {truncateContent} from "../../utils/utils";
+import {t, truncateContent} from "../../utils/utils";
+import {useRouter} from "next/dist/client/compat/router";
 
 const {Meta} = Card;
 const BlogItem = ({item}) => {
+    const router = useRouter();
+    const {locale} = router;
+
+    const [title, setTitle] = useState("");
+    // const [content, setContent] = useState("");
+
+    useEffect(() => {
+        const title = (locale === 'en') ? item.title_en : (locale === 'ru') ? item.title_ru : item.title
+        // const content = (locale === 'en') ? item.content_en : (locale === 'ru') ? item.content_ru : item.content
+        setTitle(title)
+        // setContent(content)
+
+    }, [locale, item])
     return (
         <Card
             style={{ width: '100%', maxWidth: 420, margin:'auto' }}
@@ -26,11 +40,11 @@ const BlogItem = ({item}) => {
             }
         >
             <div className={styles.blogTextPage}>
-                <h2>{truncateContent(item?.title, 50)}</h2>
+                <h2>{truncateContent(title, 50)}</h2>
             </div>
-            <Link href={'/blogs/'+item?.id}>
+            <Link href={'/blogs/'+encodeURIComponent(item?.title)}>
                 <div className={styles.blogButton}>
-                    <span className={styles.span}>Read More <ArrowRightOutlined/></span>
+                    <span className={styles.span} > <span style={{marginRight:'5px'}}>{t('read_more')}</span><ArrowRightOutlined/></span>
                 </div>
             </Link>
         </Card>

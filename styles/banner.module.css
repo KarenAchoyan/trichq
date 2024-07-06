@@ -92,6 +92,8 @@
 .banner {
     width: 95%;
     margin: auto;
+    height: 800px;
+    overflow: hidden;
 }
 
 .item {

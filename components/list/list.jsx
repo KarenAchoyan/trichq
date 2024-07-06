@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {t} from "../../utils/utils";
 
 const List = () => {
     const settings = {
@@ -45,7 +46,7 @@ const List = () => {
                         explicabo quis facere nulla sint sed quisquam aperiam possimus et. Autem, esse.
                     </p>
                     <Link href={`/blogs/test`}>
-                        <Button>Read More</Button>
+                        <Button>{t("read_more")}</Button>
                     </Link>
                 </div>
             </div>

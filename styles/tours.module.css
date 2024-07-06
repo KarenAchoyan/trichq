@@ -1,64 +1,81 @@
-.container{
+.container {
     width: 95%;
     margin: auto;
     padding-bottom: 30px;
 }
-.container>div>div{
+
+.container > div > div {
     padding-bottom: 20px;
 }
-.container>div{
+
+.container > div {
     padding-bottom: 20px;
 }
-.container>h4{
+
+.container > h4 {
     color: #57afb6;
     padding-bottom: 20px;
     margin-top: 50px;
 }
-.container>h2{
+
+.container > h2 {
     font-size: 30px;
     padding-bottom: 30px;
 }
-.blogButton{
+
+.blogButton {
     overflow: hidden;
 }
-.blogButton>span{
+
+.blogButton > span {
     padding-top: 10px;
     font-size: 15px;
     display: block;
     transition: 0.7s;
 }
-.blogButton>span:hover{
+
+.blogButton > span:hover {
     color: blue;
     cursor: pointer;
 }
-.blogButton>span{
+
+.blogButton > span {
     transform: translateX(-93px);
 }
-.blogButton:hover .span{
+
+.blogButton:hover .span {
     transform: translateX(1px);
 
 }
-.itemTour{
+
+.itemTour {
     width: 90%;
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
 }
-.itemTour:hover .price{
+
+.itemTour:hover .price {
     background-color: #5bb2b7;
 }
-.itemTour:hover img{
+
+.itemTour:hover img {
     filter: drop-shadow(8px 8px 10px gray);
 }
-.item{
+
+.item {
     width: calc(100% / 3);
     margin-bottom: 40px;
 }
-.itemTour img{
+
+.itemTour img {
     transition: 1s;
     width: 100%;
+    height: 325px;
+    object-fit: cover;
 }
-.linkReadMore{
+
+.linkReadMore {
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -67,14 +84,17 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.51);
     margin-top: 20px;
 }
-.title{
+
+.title {
     margin-top: 15px;
     line-height: 30px;
 }
-.avatar{
+
+.avatar {
     position: relative;
 }
-.price{
+
+.price {
     transition: 0.8s;
     background: #344451;
     border-top-left-radius: 10px;
@@ -87,33 +107,42 @@
     color: white;
     font-size: 20px;
 }
-.rightSection{
+
+.rightSection {
     width: 30%;
 }
-.leftSection{
+
+.leftSection {
     width: 70%;
 }
-.containerTours{
+
+.containerTours {
     width: 90%;
     margin: 70px auto;
     display: flex;
 }
-.row{
+
+.row {
     display: flex;
     flex-wrap: wrap;
 }
-.contentRightSection{
+
+.contentRightSection {
     width: 80%;
     margin: auto;
 }
-.contentRightSection input, .contentRightSection button{
+
+.contentRightSection input, .contentRightSection button {
     height: 60px;
     font-size: 17px;
 }
-.contentRightSection textarea{
+
+.contentRightSection textarea {
     height: 150px;
     font-size: 17px;
 }
-.contentRightSection svg{
+
+.contentRightSection svg {
     font-size: 23px;
 }
+
