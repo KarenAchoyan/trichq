@@ -80,7 +80,7 @@ const DetalisTour = ({tour}) => {
                         icon: <UserOutlined />,
                         content: (
                             <div>
-                                <p>{tour.age}+</p>
+                                <p>{tour?.age}+</p>
                                 <p>{t("age")}</p>
                             </div>
                         )
