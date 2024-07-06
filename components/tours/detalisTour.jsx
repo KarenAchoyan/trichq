@@ -1,16 +1,37 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from '../../styles/tourDetalis.module.css'
 import {CalendarOutlined, ClockCircleOutlined, GlobalOutlined, TagsOutlined, UserOutlined} from "@ant-design/icons";
 import {Button, DatePicker, Form, Input} from "antd";
 import {Image} from "antd";
 import BlogItem from "../blog/blogItem";
 import {useRouter} from "next/router";
+import {t} from "../../utils/utils";
 
 const DetalisTour = ({tour}) => {
     const [form] = Form.useForm();
     const [page, setPage] = useState(1)
     const router = useRouter();
     const {locale} = router;
+
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const [duration, setDuration] = useState("");
+    const [location, setLocation] = useState("");
+    const [date, setDate] = useState("");
+
+    useEffect(() => {
+        const title = (locale === 'en') ? tour.title_en : (locale === 'ru') ? tour.title_ru : tour.title;
+        const content = (locale === 'en') ? tour.content_en : (locale === 'ru') ? tour.content_ru : tour.content;
+        const date = (locale === 'en') ? tour.date_en : (locale === 'ru') ? tour.date_ru : tour.date;
+        const duration = (locale === 'en') ? tour.duration_en : (locale === 'ru') ? tour.duration_ru : tour.duration;
+        const location = (locale === 'en') ? tour.location_en : (locale === 'ru') ? tour.location_ru : tour.location;
+        setTitle(title)
+        setContent(content)
+        setDate(date)
+        setLocation(location)
+        setDuration(duration)
+
+    }, [locale, tour])
 
     function BtnItem({item}) {
         return (
@@ -41,8 +62,8 @@ const DetalisTour = ({tour}) => {
                         icon: <ClockCircleOutlined/>,
                         content: (
                             <div>
-                                <p>3 days</p>
-                                <p>Duration</p>
+                                <p>{duration}</p>
+                                <p>{t("duration")}</p>
                             </div>
                         )
                     }}/>
@@ -50,8 +71,8 @@ const DetalisTour = ({tour}) => {
                         icon: <GlobalOutlined />,
                         content: (
                             <div>
-                                <p>Ara mount</p>
-                                <p>Location</p>
+                                <p>{location}</p>
+                                <p>{t("location")}</p>
                             </div>
                         )
                     }}/>
@@ -59,8 +80,8 @@ const DetalisTour = ({tour}) => {
                         icon: <UserOutlined />,
                         content: (
                             <div>
-                                <p>12+</p>
-                                <p>Age</p>
+                                <p>{tour.age}+</p>
+                                <p>{t("age")}</p>
                             </div>
                         )
                     }}/>
@@ -68,8 +89,8 @@ const DetalisTour = ({tour}) => {
                         icon: <CalendarOutlined />,
                         content: (
                             <div>
-                                <p>12 June</p>
-                                <p>Date</p>
+                                <p>{date}</p>
+                                <p>{t("date")}</p>
                             </div>
                         )
                     }}/>

@@ -146,3 +146,13 @@
     font-size: 23px;
 }
 
+@media only screen and (max-width: 650px){
+    .title{
+        font-size: 13px;
+    }
+
+    .container > h2 {
+        font-size: 23px;
+        padding-bottom: 30px;
+    }
+}

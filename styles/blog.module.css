@@ -127,10 +127,21 @@
     }
     .page > h2 {
         text-align: center;
+        font-size: 25px;
     }
 
 }
 
+@media only screen and (max-width: 680px) {
+    .blogTextPage > h2 {
+        font-size: 18px;
+    }
+    .page > h2 {
+        text-align: center;
+        font-size: 19px;
+    }
+
+}
 @media only screen and (max-width: 500px) {
     .menu {
         top: -10px;

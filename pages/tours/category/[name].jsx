@@ -25,7 +25,7 @@ const Index = () => {
                 <div className={styles.containerTours}>
                    <div className={styles.leftSection}>
                        <div className={styles.row}>
-                          {tours.map((item) => (
+                          {tours?.map((item) => (
                               <div key={item.id} className={styles.item}>
                                   <Item item={item}/>
                               </div>

@@ -311,6 +311,7 @@
     }
     .banner>h2{
         text-align: center;
+        font-size: 20px;
     }
 }
 @media only screen and (max-width: 500px){
@@ -324,7 +325,7 @@
         margin-right: 60px;
     }
     .containerTours{
-        width: 330px;
+        width: 390px;
     }
     .row>div{
         width: calc(100% / 2);
@@ -347,7 +348,7 @@
         width: 300px;
     }
     .row>div{
-        width: calc(100% / 2);
+        width: 100%;
     }
     .banner>h2{
         text-align: center;
@@ -366,9 +367,7 @@
     .containerTours{
         width: 325px;
     }
-    .row>div{
-        width: calc(100% / 2);
-    }
+
     .banner>h2{
         text-align: center;
     }
@@ -387,7 +386,7 @@
         width:300px;
     }
     .row>div{
-        width: calc(100% / 2);
+        width: 100%;
     }
     .itemBtn{
         padding: 10px 15px;
@@ -407,7 +406,7 @@
         margin-right: 60px;
     }
     .row>div{
-        width: calc(100% / 2);
+        width:  100%;
     }
     .itemBtn{
         padding: 10px 15px;
@@ -429,9 +428,7 @@
     .containerTours{
         width: 270px;
     }
-    .row>div{
-        width: calc(100% / 2);
-    }
+
     .itemBtn{
         padding: 10px 15px;
     }
@@ -452,9 +449,6 @@
     .containerTours{
         width: 270px;
     }
-    .row>div{
-        width: calc(100% / 2);
-    }
     .itemBtn{
         padding: 10px 15px;
     }
@@ -462,31 +456,11 @@
         text-align: center;
     }
 }
-@media only screen and (max-width: 280px){
-    .container{
-        width: 100%;
-        flex-direction: column;
-    }
-    .bookingBar{
-        width: 280px;
-        margin-left:-5px;
-        margin-right: 90px;
-    }
-    .containerTours{
-        width: 250px;
-    }
-    .row>div{
-        width: calc(100% / 2);
-    }
-    .itemBtn{
-        padding: 10px 8px;
-    }
-    .banner>h2{
-        text-align: center;
-    }
-}
 
 @media only screen and (max-width: 500px) {
+    .itemDetail p{
+        font-size: 13px;
+    }
     .menu {
         top: -10px;
         right: -60px;

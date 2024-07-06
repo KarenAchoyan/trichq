@@ -60,7 +60,7 @@ const Tours = ({tours}) => {
             <h2>{t('favorite_tours')}</h2>
             <div>
                 <Slider {...settings}>
-                    {tours.map((item) => (
+                    {tours?.map((item) => (
                         <div key={item.id}>
                             <Item item={item}/>
                         </div>

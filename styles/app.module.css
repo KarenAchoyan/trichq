@@ -567,6 +567,16 @@
 }
 
 
+@media only screen and (max-width: 600px) {
+    .headerlogo {
+        width: 60px;
+        height: 60px;
+    }
+    .headerEndLanguage > ul > li{
+        padding: 7px 14px;
+    }
+
+}
 @media only screen and (max-width: 500px) {
     .menu {
         top: -10px;

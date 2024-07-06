@@ -163,6 +163,10 @@
     background: #344451;
 }
 @media only screen and (max-width: 800px) {
+
+    .banner {
+        height: 80vh;
+    }
     .bannerItemText {
         padding: 20px;
     }
