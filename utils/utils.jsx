@@ -33,70 +33,63 @@ export const categories = [
     {
         id: 1,
         label: 'Home',
-        name: "Գլխավոր",
+        name: "Home",
         path: "/"
     },
     {
         id: 2,
         label: 'Pages',
         icon: <CaretDownOutlined/>,
-        name: "Մեր Մասին",
+        name: "Tours",
         path: "#",
         drb: [
-            {id: 1, label: "Գործունեություն", path: "/activity"},
-            {id: 2, label: "Աշխատակազմ",path: '/stuff'},
-            {id: 3, label: "Պատմություն",path: '/history'},
-            {
-                id: 4, label: "Խորհուրդներ", path:"", drb: [
-                    {label:"Մանկավարժական",path:"/pedagogic"},
-                    {label:"Ծնողական",path: "/parentalAdvice"},
-                    {label:"Աշակերտական",path: "/students"},
-                ]
-            },
+            {id: 1, label: "Վերելքներ", label_ru:"Восхождения", path: "/activity"},
+            {id: 2, label: "Քայլարշավ", label_ru:"Пеший туризм", path:  '/stuff'},
+            {id: 3, label: "Կամար զբոսաշրջություն",label_ru:"Арочный туризм",path: '/history'},
         ]
     },
     {
         id: 5,
         label: 'Events',
         icon: <CaretDownOutlined/>,
-        name: "Միջոցառումներ",
-        path: "events"
+        name: "Blog",
+        path: "/blogs"
     },
     {
         id: 6,
         label: 'Events',
         icon: <CaretDownOutlined/>,
-        name: "Ձեռքբերումներ",
-        path: "/achievements"
+        name: "Gallery",
+        path: "/gallery"
     },
     {
         id: 7,
         label: 'News',
-        path: "news",
+        path: "/contact",
         icon: <CaretDownOutlined/>,
-        name: "Նորություններ"
+        name: "Contact Us"
     },
-    {
-        id: 8,
-        label: 'Teachers',
-        path: "/graduate",
-        icon: <CaretDownOutlined/>,
-        name: "Շրջանավարտներ"
-    },
-    {
-        id: 9,
-        label: 'Gallery',
-        path: "/materials",
-        icon: <CaretDownOutlined/>,
-        name: "Նյութեր"
-    },
-    {
-        id: 10,
-        label: 'Contact',
-        path: "contact",
-        icon: <CaretDownOutlined/>,
-        name: "Կապ"
-    }
+    // {
+    //     id: 8,
+    //     label: 'Teachers',
+    //     path: "/graduate",
+    //     icon: <CaretDownOutlined/>,
+    //     name: "հաջախորդներ"
+    // },
+    // {
+    //     id: 9,
+    //     label: 'Gallery',
+    //     path: "/materials",
+    //     icon: <CaretDownOutlined/>,
+    //     name: "Հայաստանի մասին"
+    // },
+    // {
+    //     id: 10,
+    //     label: 'Contact',
+    //     path: "contact",
+    //     icon: <CaretDownOutlined/>,
+    //     name: "Կապ"
+    // }
 ]
 export const formatDate = (dateString) => {
     const date = new Date(dateString);

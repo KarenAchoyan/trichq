@@ -41,9 +41,9 @@ const Header = () => {
                         <li>{t('tours')}
                             <div className={styles.drbContent}>
                                 <ul>
-                                    <li><Link href={'tours/category/1'}>{t("ascents")}</Link></li>
-                                    <li><Link href={'tours/category/2'}>{t('hiking')}</Link></li>
-                                    <li><Link href={'tours/category/3'}>{t('arch_tourism')}</Link></li>
+                                    <li><Link href={'/tours/category/1'}>{t("ascents")}</Link></li>
+                                    <li><Link href={'/tours/category/2'}>{t('hiking')}</Link></li>
+                                    <li><Link href={'/tours/category/3'}>{t('arch_tourism')}</Link></li>
                                 </ul>
                             </div>
                         </li>

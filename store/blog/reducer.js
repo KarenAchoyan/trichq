@@ -7,7 +7,7 @@ import {
 const initialState = {
     blogs: [],
     selectedBlog: null,
-    isFetching: false,
+    isFetching: true,
     isAdding: false,
     isUpdating: false,
     isDeleting: false,
@@ -21,7 +21,7 @@ const blogReducer = handleActions(
             isFetching: true,
             error: null,
         }),
-        [getBlog]: (state) => ({
+        [getBlog.request]: (state) => ({
             ...state,
             isFetching: true,
             error: null,
@@ -30,6 +30,11 @@ const blogReducer = handleActions(
         [getBlogs.success]: (state, {payload}) => ({
             ...state,
             blogs: payload,
+            isFetching: false,
+        }),
+        [getBlog.success]: (state, {payload}) => ({
+            ...state,
+            selectedBlog: payload,
             isFetching: false,
         }),
         [getBlog.success]: (state, {payload}) => ({

@@ -7,7 +7,7 @@ import {t} from "../../utils/utils";
 const Index = () => {
     return (
         <App>
-            <DetailsBanner title={t("gallery")}/>
+            <DetailsBanner title={t("gallery")} content={t("gallery")}/>
             <Gallery/>
         </App>
     );

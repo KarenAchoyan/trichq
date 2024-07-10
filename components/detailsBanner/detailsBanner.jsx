@@ -3,7 +3,7 @@ import styles from "../../styles/contact.module.css";
 import {HomeOutlined} from "@ant-design/icons";
 import {t} from "../../utils/utils";
 
-const DetailsBanner = ({title}) => {
+const DetailsBanner = ({title, content}) => {
     return (
         <div className={styles.box}>
             <div className={styles.container}>
@@ -14,7 +14,7 @@ const DetailsBanner = ({title}) => {
                        <div className={styles.containerSpan}>
                            <span className={styles.spanHome}><HomeOutlined/> {t('home')} </span>
                            <span className={styles.spanBorder}>-</span>
-                           <span>{t('blog_list')}</span>
+                           <span>{content}</span>
                        </div>
                    </div>
                 </div>

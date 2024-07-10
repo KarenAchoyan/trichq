@@ -10,7 +10,7 @@ const Index = () => {
     return (
         <>
             <App>
-                <DetailsBanner title={t("contact_us")}/>
+                <DetailsBanner title={t("contact_us")} content={t('contact_us')}/>
                 <ContactUs/>
                 <ContactWithUs/>
             </App>
