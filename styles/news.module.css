@@ -56,12 +56,10 @@
     box-shadow: 0 0 5px 1px #80808078;
 }
 .newsRightText:hover{
-    background: #57afb6;
-    color: #344451;
+    background: #344451;
+    color: white;
 }
-.newsRightText:hover h6{
-    color: #344451;
-}
+
 .borderimg{
     display: flex;
     padding-top: 40px;

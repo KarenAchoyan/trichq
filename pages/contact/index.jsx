@@ -4,12 +4,13 @@ import ContactUs from "../../components/contactUs/contactUs";
 import ContactWithUs from "../../components/contactWithUs/contactWithUs";
 import DetailsBanner from "../../components/detailsBanner/detailsBanner";
 import App from "../../components/layouts/app";
+import {t} from "../../utils/utils";
 
 const Index = () => {
     return (
         <>
             <App>
-                <DetailsBanner title={"Contact Us"}/>
+                <DetailsBanner title={t("contact_us")}/>
                 <ContactUs/>
                 <ContactWithUs/>
             </App>

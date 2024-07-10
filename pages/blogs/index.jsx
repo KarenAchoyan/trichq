@@ -11,6 +11,7 @@ import {getTours} from "../../store/tour/actions";
 import {getSlides} from "../../store/slides/actions";
 import {getGalleries} from "../../store/gallery/actions";
 import styles from "../../styles/blog.module.css";
+import {t} from "../../utils/utils";
 
 
 const Index = ({item}) => {
@@ -23,9 +24,9 @@ const Index = ({item}) => {
     return (
         <>
             <App>
-                <DetailsBanner title={"Blog "}/>
+                <DetailsBanner title={t('blog')}/>
                 <div className={styles.container}>
-                    <h1>Բոլոր նորությունները</h1>
+                    <h1>{t('all_news')}</h1>
                     <div className={styles.item}>
                         {blogs?.map((item) => (
                             <div key={item.id}>

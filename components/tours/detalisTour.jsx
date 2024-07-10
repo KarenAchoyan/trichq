@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import styles from '../../styles/tourDetalis.module.css'
 import {CalendarOutlined, ClockCircleOutlined, GlobalOutlined, TagsOutlined, UserOutlined} from "@ant-design/icons";
-import {Button, DatePicker, Form, Input} from "antd";
+import {Button,Col, DatePicker, Drawer, Form, Input,Row, Select, Space} from "antd";
 import {Image} from "antd";
 import BlogItem from "../blog/blogItem";
 import {useRouter} from "next/router";
 import {t} from "../../utils/utils";
+import { PlusOutlined } from '@ant-design/icons';
+const { Option } = Select;
 
 const DetalisTour = ({tour}) => {
     const [form] = Form.useForm();
@@ -18,13 +20,14 @@ const DetalisTour = ({tour}) => {
     const [duration, setDuration] = useState("");
     const [location, setLocation] = useState("");
     const [date, setDate] = useState("");
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
-        const title = (locale === 'en') ? tour.title_en : (locale === 'ru') ? tour.title_ru : tour.title;
-        const content = (locale === 'en') ? tour.content_en : (locale === 'ru') ? tour.content_ru : tour.content;
-        const date = (locale === 'en') ? tour.date_en : (locale === 'ru') ? tour.date_ru : tour.date;
-        const duration = (locale === 'en') ? tour.duration_en : (locale === 'ru') ? tour.duration_ru : tour.duration;
-        const location = (locale === 'en') ? tour.location_en : (locale === 'ru') ? tour.location_ru : tour.location;
+        const title = (locale === 'en') ? tour?.title_en : (locale === 'ru') ? tour?.title_ru : tour?.title;
+        const content = (locale === 'en') ? tour?.content_en : (locale === 'ru') ? tour?.content_ru : tour?.content;
+        const date = (locale === 'en') ? tour?.date_en : (locale === 'ru') ? tour?.date_ru : tour?.date;
+        const duration = (locale === 'en') ? tour?.duration_en : (locale === 'ru') ? tour?.duration_ru : tour?.duration;
+        const location = (locale === 'en') ? tour?.location_en : (locale === 'ru') ? tour?.location_ru : tour?.location;
         setTitle(title)
         setContent(content)
         setDate(date)
@@ -46,14 +49,30 @@ const DetalisTour = ({tour}) => {
         )
     }
 
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+    const onClose = () => {
+        setOpen(false);
+    };
     const onChange = (date, dateString) => {
         console.log(date, dateString);
     };
 
     function handlerSubmit() {
-        console.log('ok')
+        showDrawer()
     }
+    const onFinish = (values) => {
+        console.log('Form values:', values);
+        // You can perform any additional logic here, such as sending the form data to a server
+        // After that logic, you can close the drawer if needed
+        // setOpen(false);
+    };
 
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
     function Content1() {
         return (
             <div className={styles.content}>
@@ -177,45 +196,122 @@ const DetalisTour = ({tour}) => {
                             <p>{tour?.price} AMD</p>
                         </div>
                         <div className={styles.priceDescription}>
-                            One tour per person
+                            {t('one_tour_per_person')}
                         </div>
                     </div>
                     <div className={styles.pricePlace}>
-                        <h3>Book the tour</h3>
+                        <h3>{t("book_the_tour")}</h3>
                         <div className={styles.contentPricePlace}>
                             <Form form={form} onFinish={handlerSubmit} style={{width: '100%'}}>
                                 <Form.Item
-                                    name="date"
+                                    name={t('date')}
                                     rules={[
-                                        {required: true, message: "Please select a date"},
+                                        { required: true, message: t('please_select_a_date') },
                                         {
                                             validator: (_, value) =>
-                                                value ? Promise.resolve() : Promise.reject("Invalid date")
+                                                value ? Promise.resolve() : Promise.reject(t('Invalid_date'))
                                         }
                                     ]}
                                 >
                                     <DatePicker onChange={onChange} style={{width: '100%'}}/>
                                 </Form.Item>
                                 <Form.Item
-                                    name="number"
+                                    name={t('number')}
                                     rules={[
-                                        {required: true, message: "Please enter a number"},
+                                        {required: true, message: t('please_enter_a_number')},
 
                                     ]}
                                 >
                                     <Input
-                                        type="number"
-                                        placeholder="Enter number"
+                                        type={t('number')}
+                                        placeholder={t('Enter_number')}
                                         prefix={<UserOutlined/>}
                                         style={{width: '100%'}}
                                     />
                                 </Form.Item>
                                 <Form.Item>
                                     <Button type="primary" htmlType="submit" style={{width: '100%'}}>
-                                        Book now
+                                        {t('book_now')}
                                     </Button>
                                 </Form.Item>
                             </Form>
+                            <Drawer
+                                title="Create a new account"
+                                width={720}
+                                onClose={onClose}
+                                open={open}
+                                bodyStyle={{ paddingBottom: 80 }}
+                                extra={
+                                    <Space>
+                                        <Button onClick={onClose}>Cancel</Button>
+                                        <Button form="myForm" key="submit" htmlType="submit" type="primary">
+                                            Submit
+                                        </Button>
+                                    </Space>
+                                }
+                            >
+                                <Form
+                                    id="myForm"
+                                    layout="vertical"
+                                    hideRequiredMark
+                                    onFinish={onFinish}
+                                    onFinishFailed={onFinishFailed}
+                                >
+                                    <Row gutter={16}>
+                                        <Col span={12}>
+                                            <Form.Item
+                                                name="name"
+                                                label={t('name')}
+                                                rules={[{ required: true, message: t('please_enter_name') }]}
+                                            >
+                                                <Input placeholder={t('please_enter_name')} />
+                                            </Form.Item>
+                                        </Col>
+                                        <Col span={12}>
+                                            <Form.Item
+                                                name="surname"
+                                                label={t('surname')}
+                                                rules={[{ required: true, message: t('please_enter_surname') }]}
+                                            >
+                                                <Input style={{width: '100%',}} placeholder={t('please_enter_surname')} />
+                                            </Form.Item>
+                                        </Col>
+                                    </Row>
+                                    <Row gutter={16}>
+                                        <Col span={12}>
+                                            <Form.Item
+                                                name="phone"
+                                                label={t('phone')}
+                                                rules={[{ required: true, message: t('please_enter_phone') }]}
+                                            >
+                                                <Input placeholder={t('please_enter_phone')} />
+                                            </Form.Item>
+                                        </Col>
+                                        <Col span={12}>
+                                            <Form.Item
+                                                name={t('email')}
+                                                label="Email"
+                                                rules={[{ required: true, message: t('please_enter_email') }]}
+                                            >
+                                                <Input style={{width: '100%',}} placeholder={t('please_enter_email')} />
+                                            </Form.Item>
+                                        </Col>
+                                    </Row>
+
+
+                                    <Row gutter={16}>
+                                        <Col span={24}>
+                                            <Form.Item
+                                                name="description"
+                                                label={t('description')}
+                                                rules={[{ required: true, message: t('please_enter_description') }]}
+                                            >
+                                                <Input.TextArea rows={4}  placeholder={t('please_enter_description')} />
+                                            </Form.Item>
+                                        </Col>
+                                    </Row>
+                                </Form>
+                            </Drawer>
                         </div>
                     </div>
                 </div>

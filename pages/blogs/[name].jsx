@@ -8,7 +8,6 @@ import DetailsBanner from "../../components/detailsBanner/detailsBanner";
 const Name = () => {
     return (
         <App>
-            <DetailsBanner title={"blog Us"}/>
             <OtherBlog />
         </App>
     );

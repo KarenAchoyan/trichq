@@ -3,6 +3,7 @@ import styles from "../../styles/contact.module.css"
 import {FacebookOutlined, InstagramOutlined, YoutubeOutlined} from "@ant-design/icons";
 
 import { Form, Input, Select, Button, Checkbox } from 'antd';
+import {t} from "../../utils/utils";
 const { TextArea } = Input;
 const { Option } = Select;
 const ContactWithUs = () => {
@@ -26,33 +27,33 @@ const ContactWithUs = () => {
                   >
                       <div className={styles.contactInput}>
                           <div className={styles.contactText}>
-                              <h5>Drop Us a Line...</h5>
+                              <h5>{t("drop_us_a_line")}</h5>
                           </div>
                           <Form.Item
-                              name="fullName"
-                              rules={[{ required: true, message: 'Please input your full name!' }]}
+                              name={t("full_name")}
+                              rules={[{ required: true, message: t("please_input_your_full_name")}]}
                               className={styles.input}
                           >
-                              <Input placeholder="Full Name" />
+                              <Input placeholder={t("full_name")} />
                           </Form.Item>
                           <Form.Item
-                              name="email"
+                              name={t('email')}
                               rules={[
-                                  { required: true, message: 'Please input your email!' },
+                                  { required: true, message: t('please_input_your_email') },
                                   { type: 'email', message: 'The input is not a valid email!' }
                               ]}
                               className={styles.input}
                           >
-                              <Input placeholder="Your Email" />
+                              <Input placeholder={t("your_email")} />
                           </Form.Item>
                           <Form.Item
                               name="tour"
-                              rules={[{ required: true, message: 'Please select a tour!' }]}
+                              rules={[{ required: true, message: t('please_select_a_tour') }]}
                               className={styles.input}
                           >
                               <Select
                                   style={{height:'60px', fontSize:'17px'}}
-                                  placeholder="Select a tour"
+                                  placeholder={t("select_a_tour")}
                                   className={styles.customSelect}>
                                   <Option value="1">Skydrive</Option>
                                   <Option value="2">Wild Tour</Option>
@@ -61,13 +62,13 @@ const ContactWithUs = () => {
                           </Form.Item>
                           <Form.Item
                               name="message"
-                              rules={[{ required: true, message: 'Please enter your message!' }]}
+                              rules={[{ required: true, message: t("please_enter_your_message") }]}
                               className={styles.input}
                           >
-                              <TextArea placeholder="Message" rows={4} />
+                              <TextArea placeholder={t("message")} rows={4} />
                           </Form.Item>
                           <Form.Item className={styles.button}>
-                              <Button type="primary" htmlType="submit">Send Now</Button>
+                              <Button type="primary" htmlType="submit">{t("send_now")}</Button>
                           </Form.Item>
                       </div>
                   </Form>

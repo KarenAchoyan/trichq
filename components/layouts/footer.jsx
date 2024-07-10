@@ -1,6 +1,7 @@
 import React from 'react';
 import  styles from "../../styles/app.module.css"
 import Link from "next/link";
+import {t} from "../../utils/utils";
 const Footer = () => {
     return (
         <div className={styles.footer}>
@@ -10,40 +11,40 @@ const Footer = () => {
                         <img src="/1.png"/>
                     </div>
                     <div className={styles.footerText}>
-                        <p>Welcome to Tourigo, your gateway to unforgettable adventures and immersive travel experiences. Explore with us and let your journey begin!</p>
+                        <p>{t('welcome_flight')}</p>
                     </div>
                 </div>
                 <div className={styles.pagesSection}>
-                    <h4>Pages</h4>
+                    <h4>{t("pages")}</h4>
                     <ul>
-                        <li> Tours</li>
+                        <li> {t("tours")}</li>
                         <li>
                             <Link className={styles.blog} href={`/blogs`}>
-                                Blog
+                                {t('blog')}
                             </Link>
                         </li>
                         <li>
                             <Link className={styles.blog} href={`/gallery`}>
-                                Gallery
+                                {t('gallery')}
                             </Link>
                         </li>
                         <li>
                             <Link className={styles.blog} href={`/contact`}>
-                                Contact
+                                {t('contact')}
                             </Link>
                         </li>
                     </ul>
                 </div>
                 <div className={styles.pagesSection}>
-                    <h4>Tours</h4>
+                    <h4>{t("tours")}</h4>
                     <ul>
-                        <li>Verelqner</li>
-                        <li>Qaylarshaver</li>
-                        <li>Arkacayin Turizm</li>
+                        <li>{t('ascents')}</li>
+                        <li>{t('hiking')}</li>
+                        <li>{t('arch_tourism')}</li>
                     </ul>
                 </div>
                 <div className={styles.pagesSection}>
-                    <h4>Recet Post</h4>
+                    <h4>{t('recet_post')}</h4>
                     <div className={styles.pagesSectionLogo}>
                         <div className={styles.pagesLogo}>
                             <img src="/blog-image-12.png"/>
@@ -52,8 +53,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className={styles.pagesText}>
-                            <p>Trekkers Tales: Navigating the </p>
-                            <p>Worlds Wonders</p>
+                            <p>{t('trakers')} </p>
                         </div>
                     </div>
                     <div className={styles.pagesSectionLogo}>
@@ -64,24 +64,27 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className={styles.pagesText}>
-                            <p>Exploring the World, </p>
-                            <p>One Adventure at a Time </p>
+                            <p>{t('exploring')}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={styles.autor}>
                 <div className={styles.autorText}>
-                    <p>Հեղինակային իրավունքներ ©2024. Բոլոր իրավունքները պաշտպանված են.</p>
+                    <p>{t('copyright')}</p>
                 </div>
                 <div className={styles.autorItem}>
                     <div className={styles.footerItem}>
+                        <a href="https://geeklab.am" className={styles.footerItem}>
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwHO4P97LlRyQhG1B-u7uFwi3-GYgiu_-Bcg&s"
                             alt='sss'/>
+                        </a>
                     </div>
                     <div className={styles.footerItemText}>
-                        <p> Կայքը պատրաստված է GeekLab ընկերության կողմից</p>
+
+                        <p> {t('side')} </p>
+
                     </div>
                 </div>
             </div>

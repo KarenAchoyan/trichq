@@ -7,6 +7,7 @@ import {getTours} from "../../../store/tour/actions";
 import styles from "../../../styles/tours.module.css";
 import { Form, Input, Button } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import {t} from "../../../utils/utils";
 
 const Index = () => {
     const tours = useSelector((state) => state.tour.tours);
@@ -21,7 +22,7 @@ const Index = () => {
     return (
         <>
             <App>
-                <DetailsBanner title={'Grid tours'}/>
+                <DetailsBanner title={t("grid_tours")}/>
                 <div className={styles.containerTours}>
                    <div className={styles.leftSection}>
                        <div className={styles.row}>
@@ -43,26 +44,26 @@ const Index = () => {
                                 <Form.Item>
                                     <Input
                                         prefix={<SearchOutlined />}
-                                        placeholder="Search"
+                                        placeholder={t("search")}
                                     />
                                 </Form.Item>
                                 <Form.Item
                                     name="name"
-                                    rules={[{ required: true, message: 'Please input your name!' }]}
+                                    rules={[{ required: true, message: t("please_input_your_full_name") }]}
                                 >
-                                    <Input placeholder="Name" />
+                                    <Input placeholder={t('name')} />
                                 </Form.Item>
                                 <Form.Item
                                     name="email"
-                                    rules={[{ required: true, message: 'Please input your email!' }]}
+                                    rules={[{ required: true, message: t("please_input_your_email")}]}
                                 >
-                                    <Input placeholder="Email" />
+                                    <Input placeholder={t('email')} />
                                 </Form.Item>
                                 <Form.Item
                                     name="comment"
-                                    rules={[{ required: true, message: 'Please input your comment!' }]}
+                                    rules={[{ required: true, message: t('please_input_your_comment') }]}
                                 >
-                                    <Input.TextArea placeholder="Type Comment here" />
+                                    <Input.TextArea placeholder={t('type_comment_here')} />
                                 </Form.Item>
                                 <Form.Item>
                                     <Button type="primary" htmlType="submit" block>

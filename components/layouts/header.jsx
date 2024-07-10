@@ -41,9 +41,9 @@ const Header = () => {
                         <li>{t('tours')}
                             <div className={styles.drbContent}>
                                 <ul>
-                                    <li><Link href={'tours/category/1'}>ՎԵՐԵԼՔՆԵՐ</Link></li>
-                                    <li><Link href={'tours/category/2'}>ՔԱՅԼԱՐՇԱՎՆԵՐ</Link></li>
-                                    <li><Link href={'tours/category/3'}>ԱՐԿԱԾԱՅԻՆ ՏՈՒՐԻԶՄ</Link></li>
+                                    <li><Link href={'tours/category/1'}>{t("ascents")}</Link></li>
+                                    <li><Link href={'tours/category/2'}>{t('hiking')}</Link></li>
+                                    <li><Link href={'tours/category/3'}>{t('arch_tourism')}</Link></li>
                                 </ul>
                             </div>
                         </li>
@@ -78,22 +78,20 @@ const Header = () => {
                     </Space>
                 </div>
                 <Drawer
-                    title="Drawer with extra actions"
+                    title={t('Drawer_with_extra_actions')}
                     width={500}
                     onClose={showDrawer}
                     open={open}
                 >
                     <div>
                         <div className={styles.closeText}>
-                            <h4>About Tourigo</h4>
+                            <h4>{t('About_Tourigo')}</h4>
                         </div>
                         <div className={styles.text}>
-                            <p>Explore stunning destinations and create immersive travel experiences that inspire
-                                wanderlust and captivate
-                                your audience from the start</p>
+                            <p>{t('explorer')}</p>
                         </div>
                         <div className={styles.closeText}>
-                            <h4>Contact Info</h4>
+                            <h4>{t('Contact_Info')}</h4>
                         </div>
                         <div className={styles.closeIcon}>
                             <h3><CompassOutlined/></h3>
@@ -109,7 +107,7 @@ const Header = () => {
                         </div>
 
                         <div className={styles.acount}>
-                            <h4>Subscribe & Follow</h4>
+                            <h4>{t('Subscribe_Follow')}</h4>
                         </div>
                         <div className={styles.acounts}>
                             <span><FacebookOutlined/></span>

@@ -7,7 +7,7 @@ import {
 const initialState = {
     tours: [],
     selectedTour: null,
-    isFetching: false,
+    isFetching: true,
     isAdding: false,
     isUpdating: false,
     isDeleting: false,
@@ -32,22 +32,26 @@ const tourReducer = handleActions(
             tours: payload,
             isFetching: false,
         }),
+        [getTour.request]: (state, {payload}) => ({
+            ...state,
+            isFetching: true,
+        }),
         [getTour.success]: (state, {payload}) => ({
             ...state,
             selectedTour: payload,
             isFetching: false,
-        }),
-
-        [getTours.failure]: (state, {payload}) => ({
-            ...state,
-            isFetching: false,
-            error: payload,
         }),
         [getTour.failure]: (state, {payload}) => ({
             ...state,
             isFetching: false,
             error: payload,
         }),
+        [getTours.failure]: (state, {payload}) => ({
+            ...state,
+            isFetching: false,
+            error: payload,
+        }),
+
 
     },
     initialState

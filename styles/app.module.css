@@ -98,7 +98,6 @@
     justify-content: start;
     text-align: start;
     margin-left: 30px;
-    width: 480px;
     font-size: 16px;
 }
 
@@ -267,6 +266,7 @@
     list-style: none;
     margin-right: 30px;
     font-size: 20px;
+    text-transform: capitalize;
     display: block;
 }
 .blog{
@@ -520,7 +520,26 @@
     height: 200px;
 }
 
+@media only screen and (max-width: 1200px) {
+    .headerSection > ul > li{
+        font-size: 16px;
+    }
+    .pagesSection > h4{
+        font-size: 15px;
+    }
+    .footerContainer>div:last-child{
+        display: none;
+    }
+    .footerContainer>div:first-child{
+        display: none;
+    }
+    .footerContainer{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: auto;
+    }
 
+}
 @media only screen and (max-width: 1000px) {
     .autorItem {
         padding: 0 10px;
@@ -574,6 +593,9 @@
     }
     .headerEndLanguage > ul > li{
         padding: 7px 14px;
+    }
+    .footerLogo {
+        width: 90%;
     }
 
 }

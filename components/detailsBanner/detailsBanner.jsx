@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "../../styles/contact.module.css";
 import {HomeOutlined} from "@ant-design/icons";
+import {t} from "../../utils/utils";
 
 const DetailsBanner = ({title}) => {
     return (
@@ -11,9 +12,9 @@ const DetailsBanner = ({title}) => {
                        <h1>{title}</h1>
 
                        <div className={styles.containerSpan}>
-                           <span className={styles.spanHome}><HomeOutlined/> Tourigo </span>
+                           <span className={styles.spanHome}><HomeOutlined/> {t('home')} </span>
                            <span className={styles.spanBorder}>-</span>
-                           <span>Blog List</span>
+                           <span>{t('blog_list')}</span>
                        </div>
                    </div>
                 </div>

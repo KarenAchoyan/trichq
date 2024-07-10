@@ -27,7 +27,7 @@ const Item = ({item}) => {
 
             <div className={styles.overline}>
                 <div className={styles.bannerItemText}>
-                    <h4>WELCOME TOURIGO</h4>
+                    <h4>WELCOME TRICHQ</h4>
                     <h1>{title}</h1>
                     <p>{content}</p>
                     <a href={item?.url}>
