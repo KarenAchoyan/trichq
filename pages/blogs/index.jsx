@@ -24,7 +24,7 @@ const Index = ({item}) => {
     return (
         <>
             <App>
-                <DetailsBanner title={t('blog')}/>
+                <DetailsBanner title={t('blog')} content={t('blog')}/>
                 <div className={styles.container}>
                     <h1>{t('all_news')}</h1>
                     <div className={styles.item}>

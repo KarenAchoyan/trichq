@@ -29,7 +29,6 @@ const Item = ({item}) => {
                         alt="example"
                         src={process.env.IMAGE_URL + item.avatar}
                     />
-                    <div className={styles.price}>{item.price} {currentName}</div>
                 </div>
             </Link>
 

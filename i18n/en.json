@@ -115,13 +115,13 @@
   "side": "The site is made by Geeklab.",
   "blog_list": "Blog List",
   "call_us_on": "Phone Number",
-  "email_us": "Email Us",
+  "email_us": "Email",
   "our_location": "Our Location",
   "drop_us_a_line": "Drop Us a Line...",
   "please_input_your_email": "Please input your email!",
   "please_input_your_full_name": "Please input your full name!",
-  "full_name": "fullName",
-  "your_email": "Email address",
+  "full_name": "Full name",
+  "your_email": "Email",
   "please_select_a_tour": "Please select a tour!",
   "select_a_tour": "Select a tour",
   "message": "Message",
@@ -131,5 +131,6 @@
   "grid_tours": "Grid tours",
   "type_comment_here": "Type Comment here",
   "please_input_your_comment": "Please input your comment!",
-  "all_news": "All news"
+  "all_news": "All news",
+  "media": "Media"
 }

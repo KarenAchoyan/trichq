@@ -56,7 +56,6 @@ const Tours = ({tours}) => {
     };
     return (
         <div className={styles.container}>
-            <h4>{t('out_trips')}</h4>
             <h2>{t('favorite_tours')}</h2>
             <div>
                 <Slider {...settings}>

@@ -15,14 +15,19 @@ import {getReviews} from "../store/reivews/actions";
 import {getTours} from "../store/tour/actions";
 import {getSlides} from "../store/slides/actions";
 import {getGalleries} from "../store/gallery/actions";
+import {Skeleton} from "antd";
+import Loader from "../components/loader/loader";
 
 
 
 export default function Home() {
     const blogs = useSelector((state) => state.blog.blogs);
+    const blogsFetching = useSelector((state) => state.blog.isFetching);
     const reviews = useSelector((state) => state.review.reviews);
     const tours = useSelector((state) => state.tour.tours);
+    const toursFetching = useSelector((state) => state.tour.isFetching);
     const slides = useSelector((state) => state.slide.slides);
+    const slidesFetching = useSelector((state) => state.slide.isFetching);
     const galleries = useSelector((state) => state.gallery?.galleries);
 
     const dispatch = useDispatch();
@@ -43,13 +48,15 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main>
-                <App>
-                    <Banner slides={slides}/>
-                    <Tours tours={tours}/>
-                    <Reviews reviews={reviews}/>
-                    <Blog blogs={blogs}/>
-                    <Sliders galleries={galleries}/>
-                </App>
+                {/*<Loader  loader={slidesFetching && blogsFetching && toursFetching}>*/}
+                    <App>
+                        <Banner slides={slides}/>
+                        <Tours tours={tours}/>
+                        <Sliders galleries={galleries}/>
+                        <Reviews reviews={reviews}/>
+                        <Blog blogs={blogs}/>
+                    </App>
+                {/*</Loader>*/}
             </main>
         </>
     );

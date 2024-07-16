@@ -1,0 +1,12 @@
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+.loader img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

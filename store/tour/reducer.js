@@ -27,6 +27,10 @@ const tourReducer = handleActions(
             error: null,
         }),
 
+        [getTours.request]: (state, {payload}) => ({
+            ...state,
+            isFetching: true,
+        }),
         [getTours.success]: (state, {payload}) => ({
             ...state,
             tours: payload,

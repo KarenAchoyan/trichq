@@ -11,6 +11,10 @@ const initialState = {
 
 const slideReducer = handleActions(
     {
+        [getSlides.request]: (state, { payload }) => ({
+            ...state,
+            isFetching:true,
+        }),
         [getSlides.success]: (state, { payload }) => ({
             ...state,
             slides: payload,

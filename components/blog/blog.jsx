@@ -22,7 +22,7 @@ const Blog = ({blogs}) => {
                 ))}
             </div>
             <div className={styles.center}>
-                <Link href={'/contact'}>
+                <Link href={'/blogs'}>
                     <Button type={'blue'}>{t('see_more')}</Button>
                 </Link>
             </div>

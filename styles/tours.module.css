@@ -21,6 +21,8 @@
 .container > h2 {
     font-size: 30px;
     padding-bottom: 30px;
+    text-align: center;
+    margin-top: 50px;
 }
 
 .blogButton {

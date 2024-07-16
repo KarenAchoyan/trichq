@@ -4,6 +4,8 @@ import Button from "../button/button";
 import {FacebookOutlined, InstagramOutlined, YoutubeOutlined} from "@ant-design/icons";
 import {t} from "../../utils/utils";
 import {useRouter} from "next/dist/client/compat/router";
+import Image from "next/image";
+import {Skeleton} from "antd";
 
 const Item = ({item}) => {
 
@@ -12,6 +14,7 @@ const Item = ({item}) => {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+
 
     useEffect(() => {
         const title = (locale === 'en') ? item.title_en : (locale === 'ru') ? item.title_ru : item.title
@@ -22,7 +25,7 @@ const Item = ({item}) => {
     }, [locale, item])
     return (
         <div className={styles.item}>
-            <img src={process.env.IMAGE_URL + item.image} alt=""/>
+            <Image width={1000} height={600} src={process.env.IMAGE_URL + item.image} alt=""/>
             <div className={styles.back}/>
 
             <div className={styles.overline}>
@@ -33,13 +36,7 @@ const Item = ({item}) => {
                     <a href={item?.url}>
                         <Button type={`blue`}>{t('know_more')}</Button>
                     </a>
-                    <div className={styles.socials}>
-                        <ul>
-                            <li><FacebookOutlined/></li>
-                            <li><InstagramOutlined/></li>
-                            <li><YoutubeOutlined/></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>

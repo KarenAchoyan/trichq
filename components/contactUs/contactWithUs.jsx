@@ -30,11 +30,11 @@ const ContactWithUs = () => {
                               <h5>{t("drop_us_a_line")}</h5>
                           </div>
                           <Form.Item
-                              name={t("full_name")}
+                              name='fullname'
                               rules={[{ required: true, message: t("please_input_your_full_name")}]}
                               className={styles.input}
                           >
-                              <Input placeholder={t("full_name")} />
+                              <Input placeholder={t("contact_name")} />
                           </Form.Item>
                           <Form.Item
                               name={t('email')}
@@ -45,20 +45,6 @@ const ContactWithUs = () => {
                               className={styles.input}
                           >
                               <Input placeholder={t("your_email")} />
-                          </Form.Item>
-                          <Form.Item
-                              name="tour"
-                              rules={[{ required: true, message: t('please_select_a_tour') }]}
-                              className={styles.input}
-                          >
-                              <Select
-                                  style={{height:'60px', fontSize:'17px'}}
-                                  placeholder={t("select_a_tour")}
-                                  className={styles.customSelect}>
-                                  <Option value="1">Skydrive</Option>
-                                  <Option value="2">Wild Tour</Option>
-                                  <Option value="3">City Tour</Option>
-                              </Select>
                           </Form.Item>
                           <Form.Item
                               name="message"

@@ -138,41 +138,17 @@
     padding: 50px;
 }
 
-.socials > ul {
-    display: flex;
-}
-
-.socials > ul > li {
-    list-style: none;
-}
-
-.socials {
-    margin-top: 20px;
-}
-
-.socials li {
-    list-style: none;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin-right: 15px;
-    font-size: 25px;
-    background: #344451;
-}
 @media only screen and (max-width: 800px) {
 
     .banner {
-        height: 80vh;
+        height:50vh;
     }
     .bannerItemText {
         padding: 20px;
     }
     .item {
         width: 100%;
-        height: 80vh;
+        height: 50vh;
     }
 
     .socials li {

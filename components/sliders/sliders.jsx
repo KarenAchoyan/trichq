@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Image} from "antd";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import {t} from "../../utils/utils";
 
 const Sliders = ({galleries}) => {
     const settings = {
@@ -49,6 +50,7 @@ const Sliders = ({galleries}) => {
     };
     return (
         <div className={styles.container}>
+            <h2>{t('media')}</h2>
             <Slider {...settings}>
                 {galleries?.map((item) => (
                     <div key={item.id} className={styles.imageContainer}>

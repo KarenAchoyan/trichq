@@ -32,7 +32,7 @@ const Header = () => {
             <div className={styles.headerContainer}>
                 <div className={styles.headerlogo}>
                     <Link href="/" className={styles.headerlogo}>
-                        <img src="/1.png" alt="chi bacum"/>
+                        <img src="/1.png"/>
                     </Link>
                 </div>
                 <div className={styles.headerSection}>
@@ -65,7 +65,15 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
+            <div className={styles.socials}>
+                <ul>
+                    <li><FacebookOutlined/></li>
+                    <li><InstagramOutlined/></li>
+                    <li><YoutubeOutlined/></li>
+                </ul>
+            </div>
             <LanguageSwitcher/>
+
             <div className={styles.headerIcon}>
                 <div onClick={showDrawer}>
                     <Space>

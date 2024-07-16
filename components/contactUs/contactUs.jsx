@@ -1,6 +1,6 @@
 import React from 'react';
 import  styles from "../../styles/contact.module.css"
-import {MailOutlined, PhoneOutlined} from "@ant-design/icons";
+import {MailOutlined, PhoneOutlined, PushpinOutlined} from "@ant-design/icons";
 import {t} from "../../utils/utils";
 const ContactUs = () => {
     return (
@@ -18,9 +18,6 @@ const ContactUs = () => {
                     <div className={styles.number}>
                         <span className={styles.span}>+374 44 33 22</span>
                     </div>
-                    <div className={styles.numbers}>
-                        <span className={styles.span}>+374 44 33 22</span>
-                    </div>
                 </div>
                 <div className={styles.contactItem}>
                     <div className={styles.phoneIcon}>
@@ -34,14 +31,11 @@ const ContactUs = () => {
                     <div className={styles.number}>
                         <span className={styles.span}>support@tourigo.com</span>
                     </div>
-                    <div className={styles.numbers}>
-                        <span className={styles.span}>support@tourigo.com</span>
-                    </div>
                 </div>
                 <div className={styles.contactItem}>
                     <div className={styles.phoneIcon}>
                         <div className={styles.phoneBox}>
-                            <PhoneOutlined/>
+                            <PushpinOutlined />
                         </div>
                     </div>
                     <div className={styles.call}>
@@ -49,9 +43,6 @@ const ContactUs = () => {
                     </div>
                     <div className={styles.number}>
                         <span className={styles.span}>1426 Center street</span>
-                    </div>
-                    <div className={styles.numbers}>
-                        <span className={styles.span}>97702,California,USA</span>
                     </div>
                 </div>
             </div>
