@@ -30,7 +30,9 @@ const Index = () => {
         dispatch(getTour.request({id: name}));
     }, [dispatch, name])
 
-
+    useEffect(()=>{
+        console.log(tour)
+    },[tour])
 
     useEffect(() => {
         const title = (locale === 'en') ? tour?.title_en : (locale === 'ru') ? tour?.title_ru : tour?.title;
@@ -129,18 +131,7 @@ const Index = () => {
                 <div className={styles.description}>
                     <p dangerouslySetInnerHTML={{__html: (locale === 'en') ? tour?.content_en : (locale === 'ru') ? tour?.content_ru : tour?.content}}/>
                 </div>
-                <div className={styles.blogContent}>
-                    <Skeleton loading={isFetching} active>
-                        <h3>Ի՞նչ է անհրաժեշտ վերցնել</h3>
-                        <div className={styles.blogs}>
-                            {tour?.blogs.map((item) => (
-                                <div key={item.id}>
-                                    <BlogItem item={item.blog}/>
-                                </div>
-                            ))}
-                        </div>
-                    </Skeleton>
-                </div>
+
             </div>
         )
     }
@@ -195,19 +186,21 @@ const Index = () => {
             <div className={styles.container}>
 
                 <div className={styles.containerTours}>
-                    <div className={styles.buttons}>
-                        <div className={`${styles.itemBtn} ${page === 1 ? styles.active : null}`}
-                             onClick={() => setPage(1)}>Details
-                        </div>
-                        <div className={`${styles.itemBtn} ${page === 2 ? styles.active : null}`}
-                             onClick={() => setPage(2)}>Itinerary
-                        </div>
-                        <div className={`${styles.itemBtn} ${page === 3 ? styles.active : null}`}
-                             onClick={() => setPage(3)}>Photos
-                        </div>
-                    </div>
                     <div className={styles.contents}>
-                        {page === 1 ? <Content1/> : page === 2 ? <Content2/> : <Content3/>}
+                        <Content1/>
+                        {/*<Content3/>*/}
+                        <div className={styles.blogContent}>
+                            <Skeleton loading={isFetching} active>
+                                <h3>Ի՞նչ է անհրաժեշտ վերցնել</h3>
+                                <div className={styles.blogs}>
+                                    {tour?.blogs.map((item) => (
+                                        <div key={item.id}>
+                                            <BlogItem item={item.blog}/>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Skeleton>
+                        </div>
                     </div>
 
                 </div>

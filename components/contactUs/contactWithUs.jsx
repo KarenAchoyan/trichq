@@ -48,7 +48,11 @@ const ContactWithUs = () => {
                           </Form.Item>
                           <Form.Item
                               name="message"
-                              rules={[{ required: true, message: t("please_enter_your_message") }]}
+                              rules={[
+                                  { required: true, message: t("please_enter_your_message") },
+                                  { min: 10, message: t("contact_field_error_message_2") },
+                                  { max: 200, message: t("contact_field_error_message_3") }
+                              ]}
                               className={styles.input}
                           >
                               <TextArea placeholder={t("message")} rows={4} />

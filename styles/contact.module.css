@@ -217,7 +217,7 @@
 }
 
 .contactItem {
-    width: 400px;
+    width: calc(100% / 3 - 60px);
     background: white;
     border-radius: 10px;
     padding: 20px;

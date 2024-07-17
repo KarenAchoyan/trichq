@@ -12,8 +12,7 @@ const Reviews = ({reviews}) => {
                     <h2>{t("customers_feedback")}</h2>
                 </div>
                 <div className={styles.item}>
-                    <img src='https://html.bdevs.net/tourigo-prv/assets/images/testimonial/testimonial-img-2.png'
-                         alt='chi bana'/>
+                    <img src='https://html.bdevs.net/tourigo-prv/assets/images/testimonial/testimonial-img-2.png'/>
                 </div>
             </div>
             <div className={styles.newsRight}>

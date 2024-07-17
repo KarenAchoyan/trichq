@@ -159,7 +159,7 @@ const DetalisTour = ({tour}) => {
         return (
             <div className={styles.content}>
                 <div className={styles.row}>
-                    {JSON.parse(tour.images).map((image,index)=>(
+                    {JSON.parse(tour?.images).map((image,index)=>(
                         <div key={index} className={styles.image}>
                             <Image src={process.env.IMAGE_URL+image} preview={true}/>
                         </div>

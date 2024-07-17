@@ -121,7 +121,6 @@ const Header = () => {
                             <span><FacebookOutlined/></span>
                             <span><InstagramOutlined/></span>
                             <span><YoutubeOutlined/></span>
-                            <span><TwitterOutlined/></span>
                         </div>
                         <div className={styles.div}>
 
