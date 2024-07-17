@@ -1,7 +1,7 @@
 import {handleActions} from 'redux-actions';
 import {
     getTours,
-    getTour, getToursWithCategory,
+    getTour, getToursWithCategory, reservationTour,
 } from './actions';
 
 const initialState = {
@@ -30,6 +30,11 @@ const tourReducer = handleActions(
         [getToursWithCategory.request]: (state) => ({
             ...state,
             isFetching: true,
+            error: null,
+        }),
+        [reservationTour.request]: (state) => ({
+            ...state,
+            isAdding: true,
             error: null,
         }),
 
@@ -64,6 +69,15 @@ const tourReducer = handleActions(
         [getToursWithCategory.failure]: (state, {payload}) => ({
             ...state,
             isFetching: false,
+            error: payload,
+        }),
+        [reservationTour.success]: (state, {payload}) => ({
+            ...state,
+            isAdding: true,
+        }),
+        [reservationTour.failure]: (state, {payload}) => ({
+            ...state,
+            isAdding: false,
             error: payload,
         }),
         [getTours.failure]: (state, {payload}) => ({

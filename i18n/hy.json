@@ -12,7 +12,7 @@
   "available": "Հասանելի է",
   "add": "Ավելացնել",
   "remove": "Հեռացնել",
-  "name": "Անվանում",
+  "name": "Անուն",
   "search": "Որոնել",
   "about_us": "Մեր մասին",
   "contact_us": "Կապ մեզ հետ",
@@ -78,7 +78,7 @@
   "favorite_tours": "Առաջիկա արշավներ",
   "read_more": "Կարդալ ավելին",
   "see_more": "Տեսնել ավելին",
-  "date": "Ժաման․",
+  "date": "",
   "age": "Տարիք",
   "location": "Վայր",
   "duration": "Տեւողությունը",
@@ -96,7 +96,7 @@
   "please_select_a_date": "Խնդրում ենք ընտրել ամսաթիվ",
   "please_enter_a_number": "Խնդրում ենք մուտքագրել թիվ",
   "number": "թիվ",
-  "Enter_number": "Մուտքագրեք համարը",
+  "Enter_number": "Մասնակիցների քանակ",
   "Invalid_date": "Անվավեր ամսաթիվ",
   "Drawer_with_extra_actions": "Հետադարձ կապ",
   "About_Tourigo": "Թռիչքի մասին",
@@ -132,5 +132,7 @@
   "type_comment_here": "Մուտքագրեք մեկնաբանություն այստեղ",
   "please_input_your_comment": "Խնդրում ենք մուտքագրել ձեր մեկնաբանությունը",
   "all_news": "Բոլոր նորությունները",
-  "media": "Մեդիա"
+  "media": "Մեդիա",
+  "tour_bron": "Ամրագրել տուր",
+  "success_message": "Ձեր ամրագրումը հաստատված է"
 }

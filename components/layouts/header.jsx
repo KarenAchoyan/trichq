@@ -10,9 +10,12 @@ import Link from "next/link";
 import {Button, Drawer} from 'antd';
 import {categories, t} from "../../utils/utils";
 import LanguageSwitcher from "./languageSwitcher";
+import {useRouter} from "next/dist/client/compat/router";
 
 const Header = () => {
 
+    const router = useRouter();
+    const {locale} = router;
     const [open, setOpen] = useState(false);
     const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -139,7 +142,7 @@ const Header = () => {
                                 <div key={`category-${index}`} className='category'>
                                     <Menu.Item onClick={category.drb ? toggleSubMenu : null} key={`category-item-${index}`}>
                                         <Link href={category?.path}>
-                                            {category.name}
+                                            {(locale === 'en') ? category.label_en: (locale === 'ru') ? category.label_ru : category.label}
                                         </Link>
                                     </Menu.Item>
                                     {category.drb && (
@@ -149,7 +152,9 @@ const Header = () => {
                                                     {category.drb.map((item, index) => (
                                                         <div key={`item-${index}`} className='sub-category'>
                                                             <Menu.Item  key={`sub-item-${index}`}>
-                                                                <Link href={item?.path}> {item.label}</Link>
+                                                                <Link href={'/tours/category/'+item.id}>
+                                                                    {(locale === 'en') ? item.label_en: (locale === 'ru') ? item.label_ru : item.label}
+                                                                </Link>
                                                             </Menu.Item>
                                                         </div>
                                                     ))}

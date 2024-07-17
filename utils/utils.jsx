@@ -32,64 +32,49 @@ export const languages = [
 export const categories = [
     {
         id: 1,
-        label: 'Home',
-        name: "Home",
+        label: 'Գլխավոր',
+        label_en:"Home",
+        label_ru:"Главный",
         path: "/"
     },
     {
         id: 2,
-        label: 'Pages',
+        label: 'Տուրեր',
+        label_en:"Tours",
         icon: <CaretDownOutlined/>,
-        name: "Tours",
+        label_ru:"Туры",
         path: "#",
         drb: [
-            {id: 1, label: "Վերելքներ", label_ru:"Восхождения", path: "/activity"},
-            {id: 2, label: "Քայլարշավ", label_ru:"Пеший туризм", path:  '/stuff'},
-            {id: 3, label: "Կամար զբոսաշրջություն",label_ru:"Арочный туризм",path: '/history'},
+            {id: 1, label: "Վերելքներ", label_ru:"Восхождения", label_en: "Ascents"},
+            {id: 2, label: "Քայլարշավ", label_ru:"Поход", label_en:  'Hiking' },
+            {id: 3, label: "Արկածային տուրիզմ",label_ru:"Приключенческий туризм",label_en: 'Adventure tourism'},
         ]
     },
     {
         id: 5,
-        label: 'Events',
+        label: 'Բլոգ',
+        label_en: 'Blog',
+        label_ru: 'Блог',
         icon: <CaretDownOutlined/>,
         name: "Blog",
         path: "/blogs"
     },
     {
         id: 6,
-        label: 'Events',
+        label: 'Պատկերասրահ',
+        label_en: 'Gallery',
+        label_ru: 'Галерея',
         icon: <CaretDownOutlined/>,
-        name: "Gallery",
         path: "/gallery"
     },
     {
         id: 7,
-        label: 'News',
+        label: 'Հետադարձ կապ',
+        label_en: 'Contact us',
+        label_ru: 'Связь с нами',
         path: "/contact",
         icon: <CaretDownOutlined/>,
-        name: "Contact Us"
     },
-    // {
-    //     id: 8,
-    //     label: 'Teachers',
-    //     path: "/graduate",
-    //     icon: <CaretDownOutlined/>,
-    //     name: "հաջախորդներ"
-    // },
-    // {
-    //     id: 9,
-    //     label: 'Gallery',
-    //     path: "/materials",
-    //     icon: <CaretDownOutlined/>,
-    //     name: "Հայաստանի մասին"
-    // },
-    // {
-    //     id: 10,
-    //     label: 'Contact',
-    //     path: "contact",
-    //     icon: <CaretDownOutlined/>,
-    //     name: "Կապ"
-    // }
 ]
 export const formatDate = (dateString) => {
     const date = new Date(dateString);

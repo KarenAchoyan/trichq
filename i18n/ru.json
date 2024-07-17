@@ -89,14 +89,14 @@
   "please_enter_phone":"Пожалуйста, введите телефон",
   "please_enter_email":"Пожалуйста, введите адрес электронной почты",
   "please_enter_description":"Пожалуйста, введите описание URL",
-  "description": "описание",
+  "description": "Описание",
   "one_tour_per_person": "Одна экскурсия на человека",
   "book_now": "Забронируйте сейчас",
   "book_the_tour": "Забронировать тур",
   "please_select_a_date": "Пожалуйста, выберите дату",
-  "please_enter_a_number": "Пожалуйста, введите номер",
+  "please_enter_a_number": "Пожалуйста, введите Число участников",
   "number": "число",
-  "Enter_number": "Введите номер",
+  "Enter_number": "Число участников",
   "Invalid_date": "Недействительная дата",
   "Drawer_with_extra_actions": "Ящик с дополнительными действиями",
   "About_Tourigo": "О <<Тричк>>",
@@ -132,6 +132,8 @@
   "type_comment_here": "Введите комментарий здесь",
   "please_input_your_comment": "Пожалуйста, введите свой комментарий",
   "all_news": "Все новости",
-  "media": "Media"
+  "media": "Media",
+  "tour_bron": "Забронировать тур",
+  "success_message": "Ваше бронирование подтверждено"
 
 }

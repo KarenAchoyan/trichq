@@ -17,3 +17,9 @@ export const getTour= {
   success: createAction('GET_TOUR_SUCCESS'),
   failure: createAction('GET_TOUR_FAILURE'),
 };
+
+export const reservationTour= {
+  request: createAction('RESERVATION_TOUR_REQUEST'),
+  success: createAction('RESERVATION_TOUR_SUCCESS'),
+  failure: createAction('RESERVATION_TOUR_FAILURE'),
+};

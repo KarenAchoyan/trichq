@@ -1,6 +1,6 @@
 import {takeLatest, put, call} from 'redux-saga/effects';
 import {
-    getTours, getTour, getToursWithCategory,
+    getTours, getTour, getToursWithCategory, reservationTour,
 } from './actions';
 import axiosInstance from "configs/axiosIntance";
 
@@ -34,9 +34,20 @@ function* fetchTourWithCategorySaga(action) {
     }
 }
 
+function* fetchToReservationTour(action) {
+    try {
+        const {id} = action.payload;
+        const blog = yield call(() => axiosInstance.post(`/reservation/${id}`, action.payload));
+        yield put(reservationTour.success(blog));
+    } catch (error) {
+        yield put(reservationTour.failure(error.message));
+    }
+}
+
 
 export default function* tourSaga() {
     yield takeLatest(getTours.request, handleGetTours);
     yield takeLatest(getTour.request, fetchTourSaga);
     yield takeLatest(getToursWithCategory.request, fetchTourWithCategorySaga);
+    yield takeLatest(reservationTour.request, fetchToReservationTour);
 }

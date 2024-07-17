@@ -96,7 +96,7 @@
   "please_select_a_date": "Please select a date",
   "please_enter_a_number": "Please enter a number",
   "number": "number",
-  "Enter_number": "Enter number",
+  "Enter_number": "Number of participants",
   "Invalid_date": "Invalid date",
   "Drawer_with_extra_actions": "Contact us",
   "About_Tourigo": "About  Flight",
@@ -132,5 +132,7 @@
   "type_comment_here": "Type Comment here",
   "please_input_your_comment": "Please input your comment!",
   "all_news": "All news",
-  "media": "Media"
+  "media": "Media",
+  "tour_bron": "Book a tour",
+  "success_message": "Your reservation is confirmed"
 }

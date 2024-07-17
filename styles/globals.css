@@ -129,6 +129,8 @@ a {
 .main-menu a {
     color: black !important;
     padding-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
 :where(.css-dev-only-do-not-override-m4timi).ant-image {
     position: relative;
@@ -141,4 +143,9 @@ a {
     height: auto;
     vertical-align: middle;
     height: 100%;
+}
+.ant-drawer-title{
+    font-size: 19px!important;
+    font-weight: bold!important;
+    color: #344451!important;
 }

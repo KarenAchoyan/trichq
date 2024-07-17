@@ -3,12 +3,13 @@ import App from "../../components/layouts/app";
 import DetalisTour from "../../components/tours/detalisTour";
 import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
-import {getTour} from "../../store/tour/actions";
-import {Button, Col, DatePicker, Drawer, Form, Image, Input, Row, Skeleton, Space} from "antd";
+import {getTour, reservationTour} from "../../store/tour/actions";
+import {Button, Col, DatePicker, Drawer, Form, Image, Input, message, Row, Skeleton, Space} from "antd";
 import styles from "../../styles/tourDetalis.module.css";
 import {CalendarOutlined, ClockCircleOutlined, GlobalOutlined, TagsOutlined, UserOutlined} from "@ant-design/icons";
 import {t} from "../../utils/utils";
 import BlogItem from "../../components/blog/blogItem";
+import {info} from "next/dist/build/output/log";
 
 const Index = () => {
     const router = useRouter();
@@ -17,6 +18,7 @@ const Index = () => {
     const dispatch = useDispatch();
     const tour = useSelector((state) => state.tour?.selectedTour?.data);
     const isFetching = useSelector((state) => state.tour?.isFetching);
+    const isAdding = useSelector((state) => state.tour?.isAdding);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [duration, setDuration] = useState("");
@@ -25,6 +27,8 @@ const Index = () => {
     const [open, setOpen] = useState(false);
     const [form] = Form.useForm();
     const [page, setPage] = useState(1)
+
+    const [infos, setInfos] = useState({});
 
     const [images, setImages] = useState(null)
 
@@ -75,15 +79,14 @@ const Index = () => {
         console.log(date, dateString);
     };
 
-    function handlerSubmit() {
+    function handlerSubmit(values) {
+        setInfos({...values})
         showDrawer()
     }
 
     const onFinish = (values) => {
-        console.log('Form values:', values);
-        // You can perform any additional logic here, such as sending the form data to a server
-        // After that logic, you can close the drawer if needed
-        // setOpen(false);
+        setInfos({...infos, ...values})
+        dispatch(reservationTour.request({id:tour.id, ...infos, ...values}))
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -126,7 +129,6 @@ const Index = () => {
                         content: (
                             <div>
                                 <p>{date}</p>
-                                <p>{t("date")}</p>
                             </div>
                         )
                     }}/>
@@ -220,19 +222,7 @@ const Index = () => {
                         <div className={styles.contentPricePlace}>
                             <Form form={form} onFinish={handlerSubmit} style={{width: '100%'}}>
                                 <Form.Item
-                                    name={t('date')}
-                                    rules={[
-                                        {required: true, message: t('please_select_a_date')},
-                                        {
-                                            validator: (_, value) =>
-                                                value ? Promise.resolve() : Promise.reject(t('Invalid_date'))
-                                        }
-                                    ]}
-                                >
-                                    <DatePicker onChange={onChange} style={{width: '100%'}}/>
-                                </Form.Item>
-                                <Form.Item
-                                    name={t('number')}
+                                    name={'count'}
                                     rules={[
                                         {required: true, message: t('please_enter_a_number')},
 
@@ -252,19 +242,11 @@ const Index = () => {
                                 </Form.Item>
                             </Form>
                             <Drawer
-                                title="Create a new account"
+                                title={t('tour_bron')}
                                 width={720}
                                 onClose={onClose}
                                 open={open}
                                 bodyStyle={{paddingBottom: 80}}
-                                extra={
-                                    <Space>
-                                        <Button onClick={onClose}>Cancel</Button>
-                                        <Button form="myForm" key="submit" htmlType="submit" type="primary">
-                                            Submit
-                                        </Button>
-                                    </Space>
-                                }
                             >
                                 <Form
                                     id="myForm"
@@ -277,7 +259,7 @@ const Index = () => {
                                         <Col span={12}>
                                             <Form.Item
                                                 name="name"
-                                                label={t('name')}
+                                                label={t('contact_name')}
                                                 rules={[{required: true, message: t('please_enter_name')}]}
                                             >
                                                 <Input placeholder={t('please_enter_name')}/>
@@ -286,7 +268,7 @@ const Index = () => {
                                         <Col span={12}>
                                             <Form.Item
                                                 name="surname"
-                                                label={t('surname')}
+                                                label={t('contact_surname')}
                                                 rules={[{required: true, message: t('please_enter_surname')}]}
                                             >
                                                 <Input style={{width: '100%',}}
@@ -306,11 +288,11 @@ const Index = () => {
                                         </Col>
                                         <Col span={12}>
                                             <Form.Item
-                                                name={t('email')}
-                                                label="Email"
-                                                rules={[{required: true, message: t('please_enter_email')}]}
+                                                name='email'
+                                                label={t('email_us')}
+                                                rules={[{required: true, message: t('contact_field_error_email')}]}
                                             >
-                                                <Input style={{width: '100%',}} placeholder={t('please_enter_email')}/>
+                                                <Input style={{width: '100%',}} placeholder={t('contact_field_error_email')}/>
                                             </Form.Item>
                                         </Col>
                                     </Row>
@@ -319,12 +301,19 @@ const Index = () => {
                                     <Row gutter={16}>
                                         <Col span={24}>
                                             <Form.Item
-                                                name="description"
-                                                label={t('description')}
-                                                rules={[{required: true, message: t('please_enter_description')}]}
+                                                name="message"
+                                                label={t('contact_message')}
+                                                rules={[{required: true, message: t('contact_field_error_message')}]}
                                             >
-                                                <Input.TextArea rows={4} placeholder={t('please_enter_description')}/>
+                                                <Input.TextArea rows={4} placeholder={t('contact_field_error_message')}/>
                                             </Form.Item>
+                                        </Col>
+                                    </Row>
+                                    <Row gutter={16}>
+                                        <Col span={24}>
+                                            <Button form="myForm" key="submit" htmlType="submit" type="primary">
+                                                {t('contact_send')}
+                                            </Button>
                                         </Col>
                                     </Row>
                                 </Form>

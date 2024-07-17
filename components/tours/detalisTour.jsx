@@ -244,9 +244,7 @@ const DetalisTour = ({tour}) => {
                                 extra={
                                     <Space>
                                         <Button onClick={onClose}>Cancel</Button>
-                                        <Button form="myForm" key="submit" htmlType="submit" type="primary">
-                                            Submit
-                                        </Button>
+
                                     </Space>
                                 }
                             >
@@ -310,6 +308,7 @@ const DetalisTour = ({tour}) => {
                                             </Form.Item>
                                         </Col>
                                     </Row>
+
                                 </Form>
                             </Drawer>
                         </div>
