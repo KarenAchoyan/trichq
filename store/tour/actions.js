@@ -6,6 +6,12 @@ export const getTours = {
   failure: createAction('GET_TOURS_FAILURE'),
 };
 
+export const getToursWithCategory = {
+  request: createAction('GET_TOURS_WITH_CATEGORY_REQUEST'),
+  success: createAction('GET_TOURS_WITH_CATEGORY_SUCCESS'),
+  failure: createAction('GET_TOURS_WITH_CATEGORY_FAILURE'),
+};
+
 export const getTour= {
   request: createAction('GET_TOUR_REQUEST'),
   success: createAction('GET_TOUR_SUCCESS'),
