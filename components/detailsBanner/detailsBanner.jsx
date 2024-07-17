@@ -10,12 +10,6 @@ const DetailsBanner = ({title, content}) => {
                 <div className={styles.containerText}>
                    <div>
                        <h1>{title}</h1>
-
-                       <div className={styles.containerSpan}>
-                           <span className={styles.spanHome}><HomeOutlined/> {t('home')} </span>
-                           <span className={styles.spanBorder}>-</span>
-                           <span>{content}</span>
-                       </div>
                    </div>
                 </div>
             </div>

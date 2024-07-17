@@ -8,7 +8,6 @@ const Reviews = ({reviews}) => {
         <div className={styles.news}>
             <div>
                 <div className={styles.newsText}>
-                    <h4>{t("testimonials")}</h4>
                     <h2>{t("customers_feedback")}</h2>
                 </div>
                 <div className={styles.item}>

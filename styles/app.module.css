@@ -605,11 +605,6 @@
         font-size: 25px;
     }
 
-    .footerContainer {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
 
     .pagesSection {
         margin-left: 20px;
@@ -636,6 +631,10 @@
     .footerLogo {
         width: 90%;
     }
+    .socials{
+        display: none;
+    }
+
 
 }
 @media only screen and (max-width: 500px) {
@@ -723,5 +722,11 @@
         display: flex;
         align-items: center;
         margin-right: 80px;
+    }
+
+    .footerContainer {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
     }
 }

@@ -45,7 +45,7 @@ const Tours = ({tours}) => {
                 }
             },
             {
-                breakpoint: 480, // mobile devices
+                breakpoint: 600, // mobile devices
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
