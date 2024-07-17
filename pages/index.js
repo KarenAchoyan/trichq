@@ -24,7 +24,7 @@ export default function Home() {
     const blogs = useSelector((state) => state.blog.blogs);
     const blogsFetching = useSelector((state) => state.blog.isFetching);
     const reviews = useSelector((state) => state.review.reviews);
-    const tours = useSelector((state) => state.tour.tours);
+    const tours = useSelector((state) => state.tour?.tours?.tours);
     const toursFetching = useSelector((state) => state.tour.isFetching);
     const slides = useSelector((state) => state.slide.slides);
     const slidesFetching = useSelector((state) => state.slide.isFetching);

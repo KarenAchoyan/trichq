@@ -26,9 +26,9 @@ const Index = () => {
 
 
     useEffect(() => {
-        const title = (locale === 'en') ? category.name_en : (locale === 'ru') ? category.name_ru : category.name
+        const title = (locale === 'en') ? category?.name_en : (locale === 'ru') ? category?.name_ru : category?.name
         setTitle(title)
-    }, [category.name, category.name_en, category.name_ru, locale, name])
+    }, [category?.name, category?.name_en, category?.name_ru, locale, name])
 
     const [form] = Form.useForm();
 
