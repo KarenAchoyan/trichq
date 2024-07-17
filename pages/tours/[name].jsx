@@ -26,13 +26,16 @@ const Index = () => {
     const [form] = Form.useForm();
     const [page, setPage] = useState(1)
 
+    const [images, setImages] = useState(null)
+
     useEffect(() => {
         dispatch(getTour.request({id: name}));
     }, [dispatch, name])
 
-    useEffect(()=>{
-        console.log(tour)
-    },[tour])
+    useEffect(() => {
+        const photos = JSON.parse(tour?.images || "[]");
+        setImages(photos)
+    }, [tour])
 
     useEffect(() => {
         const title = (locale === 'en') ? tour?.title_en : (locale === 'ru') ? tour?.title_ru : tour?.title;
@@ -164,13 +167,11 @@ const Index = () => {
         return (
             <div className={styles.content}>
                 <div className={styles.row}>
-                    {JSON.parse(tour.images).map((image, index) => (
+                    {images?.map((image, index) => (
                         <div key={index} className={styles.image}>
                             <Image src={process.env.IMAGE_URL + image} preview={true}/>
                         </div>
                     ))}
-
-
                 </div>
             </div>
         )
@@ -188,12 +189,12 @@ const Index = () => {
                 <div className={styles.containerTours}>
                     <div className={styles.contents}>
                         <Content1/>
-                        {/*<Content3/>*/}
+                        <Content3/>
                         <div className={styles.blogContent}>
                             <Skeleton loading={isFetching} active>
                                 <h3>Ի՞նչ է անհրաժեշտ վերցնել</h3>
                                 <div className={styles.blogs}>
-                                    {tour?.blogs.map((item) => (
+                                    {tour?.blogs?.map((item) => (
                                         <div key={item.id}>
                                             <BlogItem item={item.blog}/>
                                         </div>

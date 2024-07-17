@@ -1,7 +1,10 @@
 .blogContainer {
-    margin-top: 40px;
-    width: 100%;
-    background: whitesmoke;
+    width: 95%;
+    margin: auto;
+}
+.slideItem img{
+    height: 300px;
+    object-fit: cover;
 }
 
 .center {
@@ -9,6 +12,7 @@
     justify-content: center;
     padding-bottom: 40px;
     padding-top: 40px;
+    margin-top: 30px;
 }
 
 .blogContainerText {

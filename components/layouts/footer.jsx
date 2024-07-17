@@ -43,31 +43,6 @@ const Footer = () => {
                         <li>{t('arch_tourism')}</li>
                     </ul>
                 </div>
-                <div className={styles.pagesSection}>
-                    <h4>{t('recet_post')}</h4>
-                    <div className={styles.pagesSectionLogo}>
-                        <div className={styles.pagesLogo}>
-                            <img src="/blog-image-12.png"/>
-                            <div className={styles.imgColor}>
-
-                            </div>
-                        </div>
-                        <div className={styles.pagesText}>
-                            <p>{t('trakers')} </p>
-                        </div>
-                    </div>
-                    <div className={styles.pagesSectionLogo}>
-                        <div className={styles.pagesLogo}>
-                            <img src="/blog-image-13.png"/>
-                            <div className={styles.imgColor}>
-
-                            </div>
-                        </div>
-                        <div className={styles.pagesText}>
-                            <p>{t('exploring')}</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div className={styles.autor}>
                 <div className={styles.autorText}>
