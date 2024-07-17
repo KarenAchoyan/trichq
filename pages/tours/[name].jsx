@@ -87,6 +87,8 @@ const Index = () => {
     const onFinish = (values) => {
         setInfos({...infos, ...values})
         dispatch(reservationTour.request({id:tour.id, ...infos, ...values}))
+        onClose();
+        message.success("Հաջողությամբ հաստաված է")
     };
 
     const onFinishFailed = (errorInfo) => {
