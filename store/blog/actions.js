@@ -11,3 +11,9 @@ export const getBlog = {
   success: createAction('GET_BLOG_SUCCESS'),
   failure: createAction('GET_BLOG_FAILURE'),
 };
+
+export const getRandBlogs = {
+  request: createAction('GET_RAND_BLOGS_REQUEST'),
+  success: createAction('GET_RAND_BLOGS_SUCCESS'),
+  failure: createAction('GET_RAND_BLOGS_FAILURE'),
+};

@@ -184,9 +184,11 @@ const Index = () => {
     return (
         <App>
             <div className={styles.banner}>
-                <Skeleton loading={isFetching} active>
-                    <h2>{tour?.title}</h2>
-                </Skeleton>
+                <div className={styles.overline}>
+                    <Skeleton loading={isFetching} active>
+                        <h2>{tour?.title}</h2>
+                    </Skeleton>
+                </div>
             </div>
             <div className={styles.container}>
 

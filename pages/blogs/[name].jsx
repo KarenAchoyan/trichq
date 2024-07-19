@@ -6,7 +6,7 @@ import OtherBlog from "../../components/blog/otherBlog";
 import DetailsBanner from "../../components/detailsBanner/detailsBanner";
 import {useRouter} from "next/dist/client/compat/router";
 import {useDispatch, useSelector} from "react-redux";
-import {getBlog, getBlogs} from "../../store/blog/actions";
+import {getBlog, getBlogs, getRandBlogs} from "../../store/blog/actions";
 import {formatDate, t} from "../../utils/utils";
 import SmallBlog from "../../components/blog/smallBlog";
 import {Skeleton} from "antd";
@@ -31,11 +31,13 @@ const Name = () => {
     const {name} = router.query;
     const dispatch = useDispatch();
     const blog = useSelector((state) => state.blog?.selectedBlog?.data);
+    const rands = useSelector((state) => state.blog?.blogs);
     const isFetching = useSelector((state) => state.blog?.isFetching);
 
 
     useEffect(() => {
         dispatch(getBlog.request({id: name}))
+        dispatch(getRandBlogs.request())
     }, [dispatch, name])
 
     useEffect(() => {
@@ -75,12 +77,9 @@ const Name = () => {
                             <div className={styles.recent}>
                                 <h6>Recent Post</h6>
                                 <div className={styles.recentItem}>
-                                    <SmallBlog/>
-                                    <SmallBlog/>
-                                    <SmallBlog/>
-                                    <SmallBlog/>
-                                    <SmallBlog/>
-                                    <SmallBlog/>
+                                    {rands.map((item) => (
+                                        <SmallBlog key={item.id} item={item}/>
+                                    ))}
                                 </div>
                             </div>
                         </div>

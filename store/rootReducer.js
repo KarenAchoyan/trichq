@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
     slide:slideReducer,
     review:reviewReducer,
     tour:tourReducer,
-    gallery:galleryReducer
+    gallery:galleryReducer,
 });
 
 export default rootReducer;

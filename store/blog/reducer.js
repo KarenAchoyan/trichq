@@ -1,7 +1,7 @@
 import {handleActions} from 'redux-actions';
 import {
     getBlogs,
-    getBlog,
+    getBlog, getRandBlogs,
 } from './actions';
 
 const initialState = {
@@ -32,6 +32,15 @@ const blogReducer = handleActions(
             blogs: payload,
             isFetching: false,
         }),
+        [getRandBlogs.request]: (state, {payload}) => ({
+            ...state,
+            isFetching: true,
+        }),
+        [getRandBlogs.success]: (state, {payload}) => ({
+            ...state,
+            blogs: payload,
+            isFetching: false,
+        }),
         [getBlog.success]: (state, {payload}) => ({
             ...state,
             selectedBlog: payload,
@@ -44,6 +53,11 @@ const blogReducer = handleActions(
         }),
 
         [getBlogs.failure]: (state, {payload}) => ({
+            ...state,
+            isFetching: false,
+            error: payload,
+        }),
+        [getRandBlogs.failure]: (state, {payload}) => ({
             ...state,
             isFetching: false,
             error: payload,
