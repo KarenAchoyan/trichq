@@ -23,7 +23,6 @@ import Loader from "../components/loader/loader";
 export default function Home() {
     const blogs = useSelector((state) => state.blog.blogs);
     const blogsFetching = useSelector((state) => state.blog.isFetching);
-    const reviews = useSelector((state) => state.review.reviews);
     const tours = useSelector((state) => state.tour?.tours?.tours);
     const toursFetching = useSelector((state) => state.tour.isFetching);
     const slides = useSelector((state) => state.slide.slides);
@@ -33,7 +32,6 @@ export default function Home() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getBlogs.request());
-        dispatch(getReviews.request());
         dispatch(getTours.request());
         dispatch(getSlides.request())
         dispatch(getGalleries.request())
@@ -53,7 +51,6 @@ export default function Home() {
                         <Banner slides={slides}/>
                         <Tours tours={tours}/>
                         <Sliders galleries={galleries}/>
-                        <Reviews reviews={reviews}/>
                         <Blog blogs={blogs}/>
                     </App>
                 {/*</Loader>*/}
