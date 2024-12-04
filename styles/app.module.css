@@ -7,7 +7,17 @@
     display: none;
 }
 
-
+.rowFlags{
+    display: flex;
+}
+.rowFlags div{
+    width: 30px;
+    margin: 0px 5px;
+}
+.rowFlags img{
+    width: 100%;
+    box-shadow: 0px 0px 3px 2px;
+}
 .menu {
     height: 100vh;
     position: fixed;
@@ -194,6 +204,10 @@
     color: white;
 }
 
+.acounts > span:hover a{
+    color: white;
+}
+
 .closeHeader {
     display: none;
 }
@@ -254,6 +268,9 @@
     font-size: 25px;
     background: #344451;
     color:white;
+}
+.socials li a{
+    color: white;
 }
 .drbContent {
     padding-top: 33px;
@@ -319,6 +336,10 @@
     margin-right: 50px;
     font-size: 35px;
     text-align: end;
+    margin-top: 10px;
+}
+.headerIcon>div:first-child{
+    margin-left: 20px;
 }
 
 .headerEndLanguage > ul {

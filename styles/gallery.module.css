@@ -1,13 +1,12 @@
 .gallery {
     width: 95%;
     margin: auto;
-    margin-right: 20px;
 }
 
 .galleryItem {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 95px;
+    justify-content: space-between;
 }
 
 .item {
@@ -16,7 +15,10 @@
     padding-bottom: 20px;
 
 }
-
+.item>div{
+    width: 100%!important;
+    height: 100%!important;
+}
 .item img {
     border-radius: 10px;
     width: 100%;
@@ -39,7 +41,7 @@
     .galleryItem {
         display: flex;
         flex-wrap: wrap;
-        margin-left: 60px;
+        margin-left: 10px;
     }
 
     .item{

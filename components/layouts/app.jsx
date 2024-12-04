@@ -17,8 +17,6 @@ const App = ({children}) => {
         };
 
         window.addEventListener('scroll', handleScroll);
-
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -27,7 +25,7 @@ const App = ({children}) => {
         <>
             <Header/>
             <AnimationHeader show={showAnimationHeader}/>
-            {children}
+                {children}
             <Footer/>
         </>
     );
